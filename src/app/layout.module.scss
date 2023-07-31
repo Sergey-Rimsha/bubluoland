@@ -1,0 +1,21 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.container {
+  @include container-app;
+
+  display: flex;
+}
+
+.layout {
+  margin-top: 62px;
+  margin-bottom: 62px;
+
+  @media screen and (width <= 820px) {
+    margin-top: 32px;
+  }
+
+  @media screen and (width <= 420px) {
+    margin-top: 8px;
+  }
+}

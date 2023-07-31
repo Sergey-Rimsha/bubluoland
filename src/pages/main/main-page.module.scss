@@ -1,0 +1,163 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.main {
+  width: 100%;
+  min-height: 100%;
+  margin-left: 30px;
+
+  @media screen and (width <= 820px) {
+    margin-left: 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    margin-top: 24px;
+    width: 100%;
+
+    &_grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 32px 16px;
+
+      @media screen and (width <= 840px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 33px;
+      }
+
+      @media screen and (width <= 640px) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        grid-row-gap: 16px;
+      }
+    }
+  }
+
+  &__message {
+    width: 100%;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: $color-grey-a7;
+    margin-top: 200px;
+
+    @media screen and (width <= 840px) {
+      margin-top: 226px;
+    }
+
+    @media screen and (width <= 560px) {
+      padding: 0 15px;
+      font-size: 18px;
+      line-height: 28px;
+      margin-top: 136px;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+
+  &__item {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+    & img {
+      width: 19px;
+      height: 19px;
+    }
+
+    @media screen and (width <= 620px) {
+      width: 32px;
+      height: 32px;
+
+      & img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    background: $color-white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(191, 196, 201, 20%), 0 3px 4px rgba(191, 196, 201, 18%),
+      0 1px 5px rgba(191, 196, 201, 24%);
+
+    &_active {
+      background: $color-btn-hover;
+      box-shadow: none;
+    }
+
+    &:nth-last-child(1) {
+      margin-left: 16px;
+    }
+  }
+}
+
+.content {
+}
+
+.from {
+  display: flex;
+
+  &__filter {
+    width: 150px;
+    height: 38px;
+    margin-left: 16px;
+
+    @media screen and (width <= 640px) {
+      width: 32px;
+      height: 32px;
+    }
+
+    & button {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(191, 196, 201, 20%), 0 3px 4px rgba(191, 196, 201, 18%),
+        0 1px 5px rgba(191, 196, 201, 24%);
+      background: $color-white;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      padding-left: 18.5px;
+
+      &:hover {
+        box-shadow: 0 3px 4px rgba(222, 125, 11, 20%), 0 1px 10px rgba(249, 89, 8, 20%);
+      }
+
+      @media screen and (width <= 640px) {
+        justify-content: center;
+        padding-left: 0;
+      }
+
+      & span {
+        margin-left: 9.5px;
+        font-size: 14px;
+        line-height: 18px;
+        color: $color-grey-a7;
+
+        @media screen and (width <= 640px) {
+          display: none;
+        }
+      }
+
+      & img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

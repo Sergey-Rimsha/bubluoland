@@ -1,0 +1,40 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.container {
+  @include container-app;
+
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  color: $color-grey-a7;
+  background: #f9f9fa;
+
+  @media screen and (width <= 820px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media screen and (width <= 420px) {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &__box {
+    padding: 20px 0;
+  }
+
+  &__item {
+    margin-right: 11px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
