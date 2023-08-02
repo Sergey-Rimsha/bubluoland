@@ -33,7 +33,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint-fix": "eslint --fix",
-    "lint": "eslint .",
+    "lint-style-fix": "npx stylelint \"**/*.scss\" --fix",
     "prepare": "husky install"
   },
   "eslintConfig": {

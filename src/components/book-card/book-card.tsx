@@ -3,12 +3,13 @@ import React, { memo, ReactElement } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 
 import bookDefault from '../../assets/jpg/book_defualt.jpg';
-import { Paths } from '../../enum';
-import { BookingI } from '../../interface';
-import { getBookUrl, getDateTransformCard, getStars } from '../../utils';
 import { ButtonCard } from '../button-card';
 
 import s from './book-card.module.scss';
+
+import { Paths } from 'enum';
+import { BookingI } from 'interface';
+import { getBookUrl, getDateTransformCard, getStars } from 'utils';
 
 interface BookCardI {
   view: 'GRID' | 'LIST';

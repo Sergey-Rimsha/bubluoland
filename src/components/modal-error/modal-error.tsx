@@ -2,14 +2,15 @@ import { ReactElement, useEffect, useState } from 'react';
 
 import classNames from 'classnames';
 
-import { setAppError } from '../../actions';
 import iconClose from '../../assets/icon/icon_close.svg';
 import errorIcon from '../../assets/icon/icon_error.svg';
-import { ErrorMessage } from '../../enum';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { ErrorResponseI } from '../../interface';
 
 import s from './modal-error.module.scss';
+
+import { setAppError } from 'actions';
+import { ErrorMessage } from 'enum';
+import { useAppDispatch, useAppSelector } from 'hooks';
+import { ErrorResponseI } from 'interface';
 
 export const ModalError = (): ReactElement => {
   const dispatch = useAppDispatch();

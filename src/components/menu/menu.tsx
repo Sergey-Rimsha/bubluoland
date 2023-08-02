@@ -3,11 +3,11 @@ import { memo, ReactElement, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 
-import { Paths } from '../../enum';
-import { useAppSelector } from '../../hooks';
-import { CategoriesI } from '../../interface';
-
 import s from './menu.module.scss';
+
+import { Paths } from 'enum';
+import { useAppSelector } from 'hooks';
+import { CategoriesI } from 'interface';
 
 interface MenuI {
   menuId: 'navigation' | 'burger';
