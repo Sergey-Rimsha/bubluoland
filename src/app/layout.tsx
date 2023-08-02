@@ -2,9 +2,9 @@ import { ReactElement } from 'react';
 
 import { Outlet } from 'react-router-dom';
 
-import { Menu } from '../components';
-
 import s from './layout.module.scss';
+
+import { Menu } from 'components';
 
 export const Layout = (): ReactElement => (
   <div className={s.layout}>

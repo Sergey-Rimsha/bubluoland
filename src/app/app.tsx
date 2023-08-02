@@ -1,12 +1,12 @@
 import { ReactElement, useEffect } from 'react';
 
-import { ModalError, Spinner } from '../components';
-import { useAppDispatch, useAppSelector } from '../hooks';
-import { FooterPage, HeaderPage } from '../pages';
-import { Routing } from '../routing';
-import { getCategoriesTC } from '../thunks';
-
 import s from './app.module.scss';
+
+import { ModalError, Spinner } from 'components';
+import { useAppDispatch, useAppSelector } from 'hooks';
+import { FooterPage, HeaderPage } from 'pages';
+import { Routing } from 'routing';
+import { getCategoriesTC } from 'thunks';
 
 export const App = (): ReactElement => {
   const dispatch = useAppDispatch();
