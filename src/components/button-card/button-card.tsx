@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import s from './button-card.module.scss';
 
 interface ButtonCardI {
@@ -6,8 +8,8 @@ interface ButtonCardI {
   type: 'Primary' | 'Secondary';
 }
 
-export const ButtonCard = ({ disabled, type, title }: ButtonCardI) => {
-  let style = '';
+export const ButtonCard = ({ disabled, type, title }: ButtonCardI): ReactElement => {
+  let style: string;
 
   switch (type) {
     case 'Secondary':

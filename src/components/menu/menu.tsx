@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from 'react';
+import { memo, ReactElement, useEffect, useRef, useState } from 'react';
 
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
@@ -13,6 +13,7 @@ interface MenuI {
   menuId: 'navigation' | 'burger';
 }
 
+// eslint-disable-next-line react/prop-types
 export const Menu = memo(({ menuId }: MenuI) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [selectMenuShow, setSelectMenuShow] = useState<boolean>(true);
@@ -20,29 +21,28 @@ export const Menu = memo(({ menuId }: MenuI) => {
 
   const clickMenuRef = useRef<HTMLDivElement>(null);
 
-  const onClickHandlerMenu = () => {
+  const onClickHandlerMenu = (): void => {
     setShowMenu(prevState => !prevState);
   };
 
-  const onClickSubTitle = () => {
+  const onClickSubTitle = (): void => {
     setShowMenu(prevState => !prevState);
   };
 
-  const styleSubLink = ({ isActive }: { isActive: boolean }) =>
+  const styleSubLink = ({ isActive }: { isActive: boolean }): string =>
     classNames(`${s.nav__subLink}`, { [`${s.nav__subLink_active}`]: isActive });
-  const styleLink = ({ isActive }: { isActive: boolean }) =>
+  const styleLink = ({ isActive }: { isActive: boolean }): string =>
     classNames(`${s.link__title}`, { [`${s.link__title_active}`]: isActive });
 
-  const onClickHandlerSelectMenu = () => {
+  const onClickHandlerSelectMenu = (): void => {
     setSelectMenuShow(prevState => !prevState);
   };
 
   useEffect(() => {
     if (!showMenu) return;
 
-    const onHandlerClick = (e: Event) => {
+    const onHandlerClick = (e: Event): void => {
       if (!clickMenuRef.current) return;
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       if (!clickMenuRef.current.contains(e.target)) {
         onClickHandlerMenu();
@@ -55,14 +55,14 @@ export const Menu = memo(({ menuId }: MenuI) => {
     return () => document.removeEventListener('click', onHandlerClick);
   }, [showMenu]);
 
-  const styleTitle = ({ isActive }: { isActive: boolean }) =>
+  const styleTitle = ({ isActive }: { isActive: boolean }): string =>
     classNames(
       `${s.nav__title}`,
       { [`${s.nav__title_active}`]: isActive },
       { [`${s.nav__title_show}`]: selectMenuShow },
     );
 
-  const sidebarMenu = () => (
+  const sidebarMenu = (): ReactElement => (
     <nav
       className={classNames(`${s.nav}`, { [`${s.sidebar}`]: menuId === 'navigation' })}
     >
@@ -130,7 +130,7 @@ export const Menu = memo(({ menuId }: MenuI) => {
     </nav>
   );
 
-  const burgerMenu = () => (
+  const burgerMenu = (): ReactElement => (
     <div ref={clickMenuRef} className={s.menu}>
       <button
         data-test-id="button-burger"

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 
 import { ModalError, Spinner } from '../components';
 import { useAppDispatch, useAppSelector } from '../hooks';
@@ -8,7 +8,7 @@ import { getCategoriesTC } from '../thunks';
 
 import s from './app.module.scss';
 
-export const App = () => {
+export const App = (): ReactElement => {
   const dispatch = useAppDispatch();
   const statusLoading = useAppSelector(state => state.app.statusLoading);
 

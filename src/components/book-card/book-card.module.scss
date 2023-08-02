@@ -2,7 +2,7 @@
 @import 'src/styles/mixins';
 
 .searchTitle {
-  color: #FF5253;
+  color: #ff5253;
 }
 
 .gridCard {
@@ -18,8 +18,10 @@
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.2px;
-  box-shadow: 0 2px 4px rgba(191, 196, 201, 20%), 0 3px 4px rgba(191, 196, 201, 18%),
-    0 1px 5px rgba(191, 196, 201, 24%);
+  box-shadow:
+    0 2px 4px rgb(191 196 201 / 20%),
+    0 3px 4px rgb(191 196 201 / 18%),
+    0 1px 5px rgb(191 196 201 / 24%);
   border-radius: 10px;
   padding: 8px 8px 0;
 
@@ -132,8 +134,10 @@
   height: 218px;
   display: flex;
   justify-content: start;
-  box-shadow: 0 2px 4px rgba(191, 196, 201, 20%), 0 3px 4px rgba(191, 196, 201, 18%),
-    0 1px 5px rgba(191, 196, 201, 24%);
+  box-shadow:
+    0 2px 4px rgb(191 196 201 / 20%),
+    0 3px 4px rgb(191 196 201 / 18%),
+    0 1px 5px rgb(191 196 201 / 24%);
   border-radius: 3px;
   padding: 24px 24px 24px 16px;
   margin-bottom: 16px;
@@ -186,10 +190,6 @@
     flex-direction: column;
     justify-content: space-between;
     margin-left: 16px;
-  }
-
-  &__header {
-
   }
 
   &__wrap {

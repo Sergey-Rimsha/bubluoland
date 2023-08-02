@@ -2,8 +2,8 @@ import React, { ChangeEvent, useCallback, useState } from 'react';
 
 import classNames from 'classnames';
 
-import icon_search from '../../assets/icon/icon_search.svg';
-import icon_search_active from '../../assets/icon/icon_search_active.svg';
+import iconSearch from '../../assets/icon/icon_search.svg';
+import iconSearchActive from '../../assets/icon/icon_search_active.svg';
 
 import s from './input-search.module.scss';
 
@@ -16,7 +16,7 @@ export const InputSearch = React.memo(
   ({ search, onChangeSearchInput }: InputSearchPropsI) => {
     const [focusInput, setFocusInput] = useState<boolean>(false);
 
-    const onHandlerClickInput = () => {
+    const onHandlerClickInput = (): void => {
       setFocusInput(prevState => !prevState);
     };
 
@@ -27,19 +27,19 @@ export const InputSearch = React.memo(
       [onChangeSearchInput],
     );
 
-    const onHandlerFocusInput = () => {
+    const onHandlerFocusInput = (): void => {
       setFocusInput(true);
     };
 
-    const onHandlerCloseInput = () => {
+    const onHandlerCloseInput = (): void => {
       setFocusInput(false);
     };
 
-    const onHandlerBlurInput = () => {
+    const onHandlerBlurInput = (): void => {
       setFocusInput(false);
     };
 
-    const searchImg = focusInput ? icon_search_active : icon_search;
+    const searchImg = focusInput ? iconSearchActive : iconSearch;
 
     return (
       <div className={s.input}>

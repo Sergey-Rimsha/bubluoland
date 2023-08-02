@@ -1,8 +1,8 @@
-import { memo } from 'react';
+import React, { memo, ReactElement } from 'react';
 
 import { NavLink, useParams } from 'react-router-dom';
 
-import book_default from '../../assets/jpg/book_defualt.jpg';
+import bookDefault from '../../assets/jpg/book_defualt.jpg';
 import { Paths } from '../../enum';
 import { BookingI } from '../../interface';
 import { getBookUrl, getDateTransformCard, getStars } from '../../utils';
@@ -24,10 +24,19 @@ interface BookCardI {
 }
 
 export const BookCard = memo(
-  ({ id, title, authors, rating, image, booking, view, search }: BookCardI) => {
+  ({
+    id,
+    title,
+    authors,
+    rating,
+    image,
+    booking,
+    view,
+    search,
+  }: BookCardI): ReactElement => {
     const { category } = useParams();
 
-    const showRating = (rate: number | null) => (
+    const showRating = (rate: number | null): ReactElement => (
       <div className={s.rating}>
         {rate === null
           ? 'ещё нет оценок'
@@ -81,10 +90,10 @@ export const BookCard = memo(
       return str;
     };
 
-    const bookCardList = () => (
+    const bookCardList = (): ReactElement => (
       <div className={s.listCard}>
         <div className={s.listCard__img}>
-          <img src={getBookUrl(image) || book_default} alt="book_image" />
+          <img src={getBookUrl(image) || bookDefault} alt="book_image" />
         </div>
         <div className={s.listCard__content}>
           <div className={s.listCard__header}>
@@ -101,10 +110,10 @@ export const BookCard = memo(
       </div>
     );
 
-    const bookCardGrid = () => (
+    const bookCardGrid = (): ReactElement => (
       <div className={s.gridCard}>
         <div className={s.gridCard__img}>
-          <img src={getBookUrl(image) || book_default} alt="book_image" />
+          <img src={getBookUrl(image) || bookDefault} alt="book_image" />
         </div>
         <div className={s.gridCard__rating}>{showRating(rating)}</div>
         <div className={s.gridCard__content}>

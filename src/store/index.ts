@@ -1,6 +1,5 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import thunk from 'redux-thunk';
 
 import { appReducer } from './app-reducer';
