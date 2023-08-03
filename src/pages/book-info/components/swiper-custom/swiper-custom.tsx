@@ -3,9 +3,9 @@ import { ReactElement, useState } from 'react';
 import { FreeMode, Navigation, Pagination, Scrollbar, Thumbs } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import bookDefaultLg from '../../../../assets/jpg/book_default_lg.jpg';
+import bookDefaultLg from '../../../../shared/assets/jpg/book_default_lg.jpg';
 
-import { getBookUrl } from 'utils';
+import { getBookUrl } from 'shared/utils';
 
 import './swiper-custom.scss';
 

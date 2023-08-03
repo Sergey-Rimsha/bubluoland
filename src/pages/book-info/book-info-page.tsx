@@ -3,13 +3,13 @@ import { ReactElement, useEffect } from 'react';
 import classNames from 'classnames';
 import { useParams } from 'react-router-dom';
 
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { BookInfoI, ErrorResponseI } from '../../interface';
-import { getBookInfoTC } from '../../thunks';
-import { getDateTransformCard } from '../../utils';
-
 import s from './book-info-page.module.scss';
 import { Comments, Description, Header, Info, Rating } from './components';
+
+import { getBookInfoTC } from 'entities/book-info/model/book-info-thunks';
+import { BookInfoI, ErrorResponseI } from 'interface';
+import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { getDateTransformCard } from 'shared/utils';
 
 export const BookInfoPage = (): ReactElement => {
   const { id, category } = useParams();

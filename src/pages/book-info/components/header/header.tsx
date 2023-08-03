@@ -2,11 +2,11 @@ import { memo } from 'react';
 
 import { NavLink } from 'react-router-dom';
 
-import { Paths } from '../../../../enum';
-import { useAppSelector } from '../../../../hooks';
-import { CategoriesI } from '../../../../interface';
-
 import s from './header.module.scss';
+
+import { Paths } from 'enum';
+import { CategoriesI } from 'interface';
+import { useAppSelector } from 'shared/hooks';
 
 interface HeaderI {
   bookName?: string;

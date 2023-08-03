@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
 
-import facebook from '../../assets/icon/icon_facebook.svg';
-import linkedin from '../../assets/icon/icon_in.svg';
-import instagram from '../../assets/icon/icon_instagram.svg';
-import vk from '../../assets/icon/icon_vk.svg';
+import facebook from '../../shared/assets/icon/icon_facebook.svg';
+import linkedin from '../../shared/assets/icon/icon_in.svg';
+import instagram from '../../shared/assets/icon/icon_instagram.svg';
+import vk from '../../shared/assets/icon/icon_vk.svg';
 
 import s from './footer.module.scss';
 

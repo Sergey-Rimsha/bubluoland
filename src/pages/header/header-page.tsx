@@ -2,12 +2,13 @@ import { ReactElement } from 'react';
 
 import { NavLink } from 'react-router-dom';
 
-import avatar from '../../assets/png/avatar.png';
-import logo from '../../assets/svg/logo.svg';
-import logoTitle from '../../assets/svg/logo_title.svg';
-import { Menu } from '../../components';
+import avatar from '../../shared/assets/png/avatar.png';
+import logo from '../../shared/assets/svg/logo.svg';
+import logoTitle from '../../shared/assets/svg/logo_title.svg';
 
 import s from './header-page.module.scss';
+
+import { Menu } from 'shared/ui';
 
 export const HeaderPage = (): ReactElement => (
   <header className={s.header}>

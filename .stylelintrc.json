@@ -1,12 +1,9 @@
 {
   "extends": "stylelint-config-standard-scss",
   "rules": {
-    "selector-max-empty-lines": 1,
-    "selector-class-pattern": [
-      "^([a-z][a-zA-Z]*)?$",
-      {
-        "message": "Имена классов должны быть в стиле lowerCamelCase"
-      }
-    ]
+    "max-empty-lines": 2,
+    "block-no-empty": null,
+    "color-function-notation": null,
+    "selector-class-pattern": null
   }
 }

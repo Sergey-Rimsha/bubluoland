@@ -2,11 +2,11 @@ import React, { ReactElement, useState } from 'react';
 
 import classNames from 'classnames';
 
-import commentAvatar from '../../../../assets/png/comment_avatar.png';
-import { CommentI } from '../../../../interface';
-import { getBookUrl, getDataTransform, getStars } from '../../../../utils';
-
 import s from './comments.module.scss';
+
+import { CommentI } from 'interface';
+import commentAvatar from 'shared/assets/png/comment_avatar.png';
+import { getBookUrl, getDataTransform, getStars } from 'shared/utils';
 
 interface CommentsI {
   comments: CommentI[] | undefined;

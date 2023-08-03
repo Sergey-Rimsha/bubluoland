@@ -3,19 +3,19 @@ import { ReactElement, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useParams } from 'react-router-dom';
 
-import { setBooksSearch, setBooksSortRating } from '../../actions';
-import iconFilter from '../../assets/icon/icon_filter_lg.svg';
-import iconFilterRevers from '../../assets/icon/icon_filter_revers.svg';
-import iconGrid from '../../assets/icon/icon_grid.svg';
-import iconGridActive from '../../assets/icon/icon_grid_active.svg';
-import iconList from '../../assets/icon/icon_list.svg';
-import iconListActive from '../../assets/icon/icon_list_active.svg';
-import { BookCard, InputSearch } from '../../components';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { BooksStateI, CategoriesI } from '../../interface';
-import { getBooksTC } from '../../thunks';
-
 import s from './main-page.module.scss';
+
+import { setBooksSearch, setBooksSortRating } from 'entities/books/model/books-actions';
+import { getBooksTC } from 'entities/books/model/books-thunks';
+import { BooksStateI, CategoriesI } from 'interface';
+import iconFilter from 'shared/assets/icon/icon_filter_lg.svg';
+import iconFilterRevers from 'shared/assets/icon/icon_filter_revers.svg';
+import iconGrid from 'shared/assets/icon/icon_grid.svg';
+import iconGridActive from 'shared/assets/icon/icon_grid_active.svg';
+import iconList from 'shared/assets/icon/icon_list.svg';
+import iconListActive from 'shared/assets/icon/icon_list_active.svg';
+import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { BookCard, InputSearch } from 'shared/ui';
 
 export const MainPage = (): ReactElement => {
   const dispatch = useAppDispatch();
