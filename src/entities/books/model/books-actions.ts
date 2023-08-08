@@ -2,6 +2,13 @@ import { BooksActionType } from 'enum';
 import { BookI, ErrorResponseI } from 'interface';
 import { StatusLoading } from 'types';
 
+export type BooksActionReturnType =
+  | ReturnType<typeof setBooksStatusLoading>
+  | ReturnType<typeof setBooks>
+  | ReturnType<typeof setBooksErrorResponse>
+  | ReturnType<typeof setBooksSortRating>
+  | ReturnType<typeof setBooksSearch>;
+
 export const setBooksStatusLoading = (statusLoading: StatusLoading) =>
   ({
     type: BooksActionType.SET_STATUS_LOADING,

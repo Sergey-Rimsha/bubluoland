@@ -1,6 +1,6 @@
+import { AppActionReturnType } from 'app/store/app-actions';
 import { AppActionType } from 'enum';
 import { AppStateI } from 'interface';
-import { AppActionReturnType } from 'types';
 
 const initialState: AppStateI = {
   statusLoading: 'idle',

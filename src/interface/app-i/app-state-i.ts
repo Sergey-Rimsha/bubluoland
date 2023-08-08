@@ -1,5 +1,6 @@
-import { StatusLoading } from '../../types';
 import { CategoriesI, ErrorResponseI } from '../utils-i';
+
+import { StatusLoading } from 'types';
 
 export interface AppStateI {
   statusLoading: StatusLoading;

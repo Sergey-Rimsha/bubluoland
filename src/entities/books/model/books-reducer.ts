@@ -1,6 +1,6 @@
+import { BooksActionReturnType } from 'entities/books/model/books-actions';
 import { BooksActionType } from 'enum';
 import { BooksStateI } from 'interface';
-import { BooksActionReturnType } from 'types';
 
 const initialState: BooksStateI = {
   items: [],
