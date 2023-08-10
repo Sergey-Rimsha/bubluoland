@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import s from './rating.module.scss';
 
-import { getStars } from 'shared/utils';
+import { getStars } from 'shared/lib/utils';
 
 interface RatingI {
   ratingValue: number | undefined;

@@ -1,5 +1,5 @@
 import { BooksActionReturnType } from 'entities/books/model/books-actions';
-import { BooksActionType } from 'enum';
+import { BooksActionType } from 'entities/books/model/enum/books-action-type';
 import { BooksStateI } from 'interface';
 
 const initialState: BooksStateI = {

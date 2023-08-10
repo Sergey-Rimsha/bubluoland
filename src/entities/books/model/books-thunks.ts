@@ -6,7 +6,7 @@ import {
   getErrorResponse,
   getValueCategories,
   sortBooksRatingDefault,
-} from 'shared/utils';
+} from 'shared/lib/utils';
 import { AppThunkType } from 'types';
 
 export const getBooksTC = (): AppThunkType => async (dispatch, getState) => {

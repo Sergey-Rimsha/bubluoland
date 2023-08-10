@@ -1,4 +1,4 @@
-import { AppActionType } from 'enum';
+import { AppActionType } from 'app/store/enum/app-action-type';
 import { ErrorResponseI } from 'interface';
 import { StatusLoading } from 'types';
 

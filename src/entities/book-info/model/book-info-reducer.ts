@@ -1,6 +1,6 @@
 import { BookInfoActionReturnType } from 'entities/book-info/model/book-info-actions';
-import { BookInfoActionType } from 'enum';
-import { BookInfoStateI } from 'interface';
+import { BookInfoStateI } from 'entities/book-info/model/book-info-i';
+import { BookInfoActionType } from 'entities/book-info/model/enum/book-info-action-type';
 
 const initialState: BookInfoStateI = {
   book: {},

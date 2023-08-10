@@ -1,4 +1,4 @@
-import { BooksActionType } from 'enum';
+import { BooksActionType } from 'entities/books/model/enum/books-action-type';
 import { BookI, ErrorResponseI } from 'interface';
 import { StatusLoading } from 'types';
 

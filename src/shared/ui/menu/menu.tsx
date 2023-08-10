@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import { Paths } from 'enum';
 import { CategoriesI } from 'interface';
-import { useAppSelector } from 'shared/hooks';
+import { useAppSelector } from 'shared/model/hooks';
 import s from 'shared/ui/menu/menu.module.scss';
 
 interface MenuI {

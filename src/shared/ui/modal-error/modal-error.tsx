@@ -3,11 +3,11 @@ import { ReactElement, useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 import { setAppError } from 'app/store/app-actions';
-import { ErrorMessage } from 'enum';
+import { ErrorMessage } from 'enum/error';
 import { ErrorResponseI } from 'interface';
 import iconClose from 'shared/assets/icon/icon_close.svg';
 import errorIcon from 'shared/assets/icon/icon_error.svg';
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import s from 'shared/ui/modal-error/modal-error.module.scss';
 
 export const ModalError = (): ReactElement => {

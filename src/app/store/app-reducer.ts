@@ -1,5 +1,5 @@
 import { AppActionReturnType } from 'app/store/app-actions';
-import { AppActionType } from 'enum';
+import { AppActionType } from 'app/store/enum/app-action-type';
 import { AppStateI } from 'interface';
 
 const initialState: AppStateI = {

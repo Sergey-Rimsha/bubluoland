@@ -6,7 +6,7 @@ import s from './header.module.scss';
 
 import { Paths } from 'enum';
 import { CategoriesI } from 'interface';
-import { useAppSelector } from 'shared/hooks';
+import { useAppSelector } from 'shared/model/hooks';
 
 interface HeaderI {
   bookName?: string;

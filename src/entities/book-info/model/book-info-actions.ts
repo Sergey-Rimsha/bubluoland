@@ -1,5 +1,6 @@
-import { BookInfoActionType } from 'enum';
-import { BookInfoI, ErrorResponseI } from 'interface';
+import { BookInfoI } from 'entities/book-info/model/book-info-i';
+import { BookInfoActionType } from 'entities/book-info/model/enum/book-info-action-type';
+import { ErrorResponseI } from 'interface';
 
 export type BookInfoActionReturnType =
   | ReturnType<typeof setBookInfo>

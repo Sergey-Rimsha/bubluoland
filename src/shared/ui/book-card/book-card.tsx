@@ -5,9 +5,9 @@ import { NavLink, useParams } from 'react-router-dom';
 import { Paths } from 'enum';
 import { BookingI } from 'interface';
 import bookDefault from 'shared/assets/jpg/book_defualt.jpg';
+import { getBookUrl, getDateTransformCard, getStars } from 'shared/lib/utils';
 import s from 'shared/ui/book-card/book-card.module.scss';
 import { ButtonCard } from 'shared/ui/button-card';
-import { getBookUrl, getDateTransformCard, getStars } from 'shared/utils';
 
 interface BookCardI {
   view: 'GRID' | 'LIST';

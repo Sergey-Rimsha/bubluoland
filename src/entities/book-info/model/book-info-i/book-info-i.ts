@@ -1,4 +1,4 @@
-import { BookingI, DeliveryI, HistoryI } from '../book-i';
+import { BookingI, DeliveryI, HistoryI } from 'interface/book-i';
 
 export interface CommentI {
   id: number;

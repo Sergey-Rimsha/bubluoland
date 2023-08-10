@@ -6,10 +6,11 @@ import { useParams } from 'react-router-dom';
 import s from './book-info-page.module.scss';
 import { Comments, Description, Header, Info, Rating } from './components';
 
+import { BookInfoI } from 'entities/book-info/model/book-info-i';
 import { getBookInfoTC } from 'entities/book-info/model/book-info-thunks';
-import { BookInfoI, ErrorResponseI } from 'interface';
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
-import { getDateTransformCard } from 'shared/utils';
+import { ErrorResponseI } from 'interface';
+import { getDateTransformCard } from 'shared/lib/utils';
+import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 
 export const BookInfoPage = (): ReactElement => {
   const { id, category } = useParams();

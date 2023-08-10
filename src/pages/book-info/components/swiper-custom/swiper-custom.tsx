@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import bookDefaultLg from '../../../../shared/assets/jpg/book_default_lg.jpg';
 
-import { getBookUrl } from 'shared/utils';
+import { getBookUrl } from 'shared/lib/utils';
 
 import './swiper-custom.scss';
 

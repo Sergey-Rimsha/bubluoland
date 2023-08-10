@@ -4,9 +4,9 @@ import classNames from 'classnames';
 
 import s from './comments.module.scss';
 
-import { CommentI } from 'interface';
+import { CommentI } from 'entities/book-info/model/book-info-i';
 import commentAvatar from 'shared/assets/png/comment_avatar.png';
-import { getBookUrl, getDataTransform, getStars } from 'shared/utils';
+import { getBookUrl, getDataTransform, getStars } from 'shared/lib/utils';
 
 interface CommentsI {
   comments: CommentI[] | undefined;

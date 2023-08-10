@@ -1,16 +1,14 @@
 import axios from 'axios';
 
-import { ErrorMessage } from 'enum';
+import { ErrorMessage } from 'enum/error';
 import { BookI, CategoriesI, ErrorResponseI } from 'interface';
 import star from 'shared/assets/icon/icon_star.svg';
 import starActive from 'shared/assets/icon/icon_star_active.svg';
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const getStars = (ratingValue: number) => {
+export const getStars = (ratingValue: number): string[] => {
   const stars = [];
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const showStar = (idStar: number) => {
+  const showStar = (idStar: number): string => {
     if (idStar <= ratingValue) {
       return starActive;
     }
@@ -18,7 +16,7 @@ export const getStars = (ratingValue: number) => {
     return star;
   };
 
-  // eslint-disable-next-line no-magic-numbers,no-plusplus
+  // eslint-disable-next-line no-plusplus,no-magic-numbers
   for (let i = 1; i <= 5; i++) {
     stars.push(showStar(i));
   }
@@ -26,8 +24,7 @@ export const getStars = (ratingValue: number) => {
   return stars;
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const getDateTransformCard = (data: string) => {
+export const getDateTransformCard = (data: string): string => {
   const mount = new Date(data).getMonth() + 1;
   const day = new Date(data).getDate();
 
@@ -37,8 +34,7 @@ export const getDateTransformCard = (data: string) => {
   return `занято до ${reformat(day)}.${reformat(mount)}`;
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const getDataTransform = (data: string) => {
+export const getDataTransform = (data: string): string => {
   const dataNew = new Date(data);
 
   const options = {
@@ -47,13 +43,11 @@ export const getDataTransform = (data: string) => {
     day: 'numeric',
   };
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   return dataNew.toLocaleString('ru', options);
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const getBookUrl = (img: { url: string } | null) => {
+export const getBookUrl = (img: { url: string } | null): string => {
   const BaseUrl = 'https://strapi.cleverland.by';
 
   if (img) {

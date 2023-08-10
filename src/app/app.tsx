@@ -5,7 +5,7 @@ import s from './app.module.scss';
 import { Routing } from 'app/routing';
 import { getCategoriesTC } from 'entities/categories/model/categories-thunks';
 import { FooterPage, HeaderPage } from 'pages';
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import { ModalError, Spinner } from 'shared/ui';
 
 export const App = (): ReactElement => {

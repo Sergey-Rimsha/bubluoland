@@ -1,7 +1,7 @@
 import { setAppError, setAppStatusLoading } from 'app/store/app-actions';
 import { categoriesApi } from 'entities/categories/api/categoriesApi';
 import { setCategories } from 'entities/categories/model/categories-actions';
-import { getErrorResponse } from 'shared/utils';
+import { getErrorResponse } from 'shared/lib/utils';
 import { AppThunkType } from 'types';
 
 export const getCategoriesTC = (): AppThunkType => async dispatch => {

@@ -14,7 +14,7 @@ import iconGrid from 'shared/assets/icon/icon_grid.svg';
 import iconGridActive from 'shared/assets/icon/icon_grid_active.svg';
 import iconList from 'shared/assets/icon/icon_list.svg';
 import iconListActive from 'shared/assets/icon/icon_list_active.svg';
-import { useAppDispatch, useAppSelector } from 'shared/hooks';
+import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import { BookCard, InputSearch } from 'shared/ui';
 
 export const MainPage = (): ReactElement => {

@@ -6,4 +6,4 @@ export {
   getStars,
   getErrorResponse,
   getValueCategories,
-} from 'shared/utils/utils';
+} from 'shared/lib/utils/utils';
