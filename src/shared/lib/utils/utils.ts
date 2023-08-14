@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-import { ErrorMessage } from 'enum/error';
 import { BookI, CategoriesI, ErrorResponseI } from 'interface';
 import star from 'shared/assets/icon/icon_star.svg';
 import starActive from 'shared/assets/icon/icon_star_active.svg';
+import { ErrorMessage } from 'shared/enum/error';
 
 export const getStars = (ratingValue: number): string[] => {
   const stars = [];

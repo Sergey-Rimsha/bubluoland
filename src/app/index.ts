@@ -1,3 +1,2 @@
 export { App } from './app';
-export { Layout } from './layout';
-export { store } from './store';
+export { store } from 'app/store/appStore';

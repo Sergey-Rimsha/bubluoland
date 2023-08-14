@@ -1,4 +1,4 @@
-import { setAppError, setAppStatusLoading } from 'app/store/app-actions';
+import { setAppError, setAppStatusLoading } from 'entities/app/model/app-reducer';
 import { categoriesApi } from 'entities/categories/api/categoriesApi';
 import { setCategories } from 'entities/categories/model/categories-actions';
 import { getErrorResponse } from 'shared/lib/utils';

@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 
-import { BookInfoI } from 'entities/book-info/model/book-info-i';
+import { BookInfoI } from 'entities/book-info/model/interface';
 import { instance } from 'shared';
 
 export const bookInfoApi = {

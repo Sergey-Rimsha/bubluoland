@@ -1,31 +1,46 @@
-import { BookInfoActionReturnType } from 'entities/book-info/model/book-info-actions';
-import { BookInfoStateI } from 'entities/book-info/model/book-info-i';
-import { BookInfoActionType } from 'entities/book-info/model/enum/book-info-action-type';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { setAppError, setAppStatusLoading } from 'entities/app/model/app-reducer';
+import { bookInfoApi } from 'entities/book-info/api/book-info-api';
+import { BookInfoI, BookInfoStateI } from 'entities/book-info/model/interface';
+import { ErrorResponseI } from 'interface';
+import { getErrorResponse } from 'shared/lib/utils';
 
 const initialState: BookInfoStateI = {
   book: {},
   error: null,
 };
 
-export const bookInfoReducer = (
-  // eslint-disable-next-line default-param-last
-  state = initialState,
-  action: BookInfoActionReturnType,
-): BookInfoStateI => {
-  switch (action.type) {
-    case BookInfoActionType.SET_BOOK:
-      return {
-        ...state,
-        book: action.book,
-        error: null,
-      };
-    case BookInfoActionType.SET_ERROR:
-      return {
-        ...state,
-        error: action.error,
-        book: {},
-      };
-    default:
-      return state;
-  }
-};
+export const getBookInfoTC = createAsyncThunk(
+  'bookInfo',
+  async (id: string, { dispatch }) => {
+    dispatch(setAppStatusLoading('loading'));
+    try {
+      const response = await bookInfoApi.getBookInfo(id);
+
+      dispatch(setBookInfo(response.data));
+      dispatch(setAppStatusLoading('succeeded'));
+    } catch (error: unknown) {
+      dispatch(setAppError(getErrorResponse(error)));
+      dispatch(setAppStatusLoading('failed'));
+      dispatch(setBookInfoError(getErrorResponse(error)));
+    }
+  },
+);
+
+const slice = createSlice({
+  name: 'bookInfo',
+  initialState,
+  reducers: {
+    setBookInfoError(state, action: PayloadAction<ErrorResponseI | null>) {
+      state.error = action.payload;
+    },
+    setBookInfo(state, action: PayloadAction<BookInfoI>) {
+      state.book = action.payload;
+    },
+  },
+});
+
+export const bookInfoReducer = slice.reducer;
+
+export const { setBookInfoError, setBookInfo } = slice.actions;

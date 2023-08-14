@@ -3,8 +3,8 @@ import { memo, ReactElement, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 
-import { Paths } from 'enum';
 import { CategoriesI } from 'interface';
+import { Paths } from 'shared/enum';
 import { useAppSelector } from 'shared/model/hooks';
 import s from 'shared/ui/menu/menu.module.scss';
 
@@ -12,11 +12,11 @@ interface MenuI {
   menuId: 'navigation' | 'burger';
 }
 
-// eslint-disable-next-line react/prop-types
-export const Menu = memo(({ menuId }: MenuI) => {
+export const Menu = memo((props: MenuI): ReactElement => {
+  const { menuId } = props;
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [selectMenuShow, setSelectMenuShow] = useState<boolean>(true);
-  const categories = useAppSelector<CategoriesI[]>(state => state.app.categories);
+  const categories = useAppSelector<CategoriesI[]>(state => state.categories.categories);
 
   const clickMenuRef = useRef<HTMLDivElement>(null);
 
