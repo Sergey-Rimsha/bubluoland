@@ -3,5 +3,43 @@
 
 
 .form {
+  width: 100%;
+  height: 100%;
+  padding: 48px 56px;
 
+  &__header {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    color: $color-dark;
+  }
+
+  &__steps {
+    margin-top: 8px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    color: $color-dark;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+
+    & div:last-child {
+      margin-top: 16px;
+    }
+  }
+
+  &__footer {
+    margin-top: 50px;
+  }
 }
