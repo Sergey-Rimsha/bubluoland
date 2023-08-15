@@ -1,17 +1,18 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { setAppError, setAppStatusLoading } from 'entities/app/model/app-reducer';
 import { bookInfoApi } from 'entities/book-info/api/book-info-api';
 import { BookInfoI, BookInfoStateI } from 'entities/book-info/model/interface';
 import { ErrorResponseI } from 'interface';
 import { getErrorResponse } from 'shared/lib/utils';
+import { createAppAsyncThunk } from 'shared/model/hooks/hooks';
 
 const initialState: BookInfoStateI = {
   book: {},
   error: null,
 };
 
-export const getBookInfoTC = createAsyncThunk(
+export const getBookInfoTC = createAppAsyncThunk(
   'bookInfo',
   async (id: string, { dispatch }) => {
     dispatch(setAppStatusLoading('loading'));

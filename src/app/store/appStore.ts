@@ -4,6 +4,7 @@ import thunkMiddleware from 'redux-thunk';
 import { rootReducer } from 'app/store/rootReducer';
 
 export type AppRootStateType = ReturnType<typeof rootReducer>;
+export type AppStore = typeof store;
 
 export const store = configureStore({
   reducer: rootReducer,

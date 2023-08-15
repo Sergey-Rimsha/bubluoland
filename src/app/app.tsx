@@ -3,7 +3,7 @@ import { ReactElement, useEffect } from 'react';
 import s from './app.module.scss';
 
 import { Routing } from 'app/routing';
-import { getCategoriesTC } from 'entities/categories/model/categories-thunks';
+import { getCategoriesTC } from 'entities/categories/model/categories-reducer';
 import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import { Spinner } from 'shared/ui';
 

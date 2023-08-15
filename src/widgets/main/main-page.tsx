@@ -5,8 +5,11 @@ import { useParams } from 'react-router-dom';
 
 import s from './main-page.module.scss';
 
-import { setBooksSearch, setBooksSortRating } from 'entities/books/model/books-actions';
-import { getBooksTC } from 'entities/books/model/books-thunks';
+import {
+  getBooksTC,
+  setBooksSearch,
+  setBooksSortRating,
+} from 'entities/books/model/books-reducer';
 import { BooksStateI, CategoriesI } from 'interface';
 import iconFilter from 'shared/assets/icon/icon_filter_lg.svg';
 import iconFilterRevers from 'shared/assets/icon/icon_filter_revers.svg';
