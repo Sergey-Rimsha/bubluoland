@@ -4,6 +4,10 @@ import classNames from 'classnames';
 
 import s from './text-field.module.scss';
 
+// interface TextFieldProps extends HTMLInputElement {
+//   inputType?: 'password' | 'email' | 'text';
+// }
+
 export const TextField = (): ReactElement => {
   const startVale = '';
   const [error] = useState<boolean>(false);
