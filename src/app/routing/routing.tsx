@@ -18,8 +18,8 @@ export const Routing = (): ReactElement => (
       <Route path={Paths.CONTRACT} element={<ContractPage />} />
     </Route>
     <Route path={`${Paths.BOOKS}/:category/:id`} element={<BookInfoPage />} />
-    <Route path="/auth" element={<Auth />}>
-      <Route index path="registration" element={<Navigate to="registration" />} />
+    <Route path="/auth/" element={<Auth />}>
+      <Route index element={<Navigate to="registration" />} />
       <Route path="registration" element={<Registrations />} />
     </Route>
   </Routes>
