@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 
 import s from './registration.module.scss';
 
+import { TextField } from 'shared/ui/text-field';
+
 export const Registrations = (): ReactElement => {
   return (
     <div className={s.form}>
@@ -10,12 +12,8 @@ export const Registrations = (): ReactElement => {
         <span className={s.form__steps}>1 шаг из 3</span>
       </div>
       <div className={s.form__content}>
-        <div>
-          <input />
-        </div>
-        <div>
-          <input />
-        </div>
+        <TextField />
+        <TextField />
       </div>
       <div className={s.form__footer}>
         <button type="submit">next steps</button>
