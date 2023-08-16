@@ -1,17 +1,24 @@
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
 
 import classNames from 'classnames';
+import { Path, UseFormRegister } from 'react-hook-form';
 
 import s from './text-field.module.scss';
 
-// interface TextFieldProps extends HTMLInputElement {
-//   inputType?: 'password' | 'email' | 'text';
-// }
+import { IFormInput } from 'features/auth/registration/ui/registrations';
 
-export const TextField = (): ReactElement => {
+interface TextFieldProps {
+  label: Path<IFormInput>;
+  register: UseFormRegister<IFormInput>;
+  required: boolean;
+  type: 'text' | 'password' | 'email';
+}
+
+export const TextField = ({ type, ...restProps }: TextFieldProps): ReactElement => {
   const startVale = '';
   const [error] = useState<boolean>(false);
   const [onFocus, setFocus] = useState<boolean>(false);
+  const [inputType, setInputType] = useState('text');
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleLabelClick = (): void => {
@@ -30,7 +37,8 @@ export const TextField = (): ReactElement => {
     if (startVale) {
       setFocus(true);
     }
-  }, []);
+    setInputType(type);
+  }, [type]);
 
   return (
     <div className={s.textField}>
@@ -46,11 +54,11 @@ export const TextField = (): ReactElement => {
         </button>
         <input
           className={s.textField__input}
-          type="text"
           onChange={onChangeInput}
           onFocus={onFocusInput}
           ref={inputRef}
-          required
+          type={inputType}
+          {...restProps}
         />
       </div>
       <span className={s.textField__description}>
