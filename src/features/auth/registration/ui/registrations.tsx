@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 
 import s from './registration.module.scss';
 
+import { ButtonCard } from 'shared/ui';
 import { TextField } from 'shared/ui/text-field';
 
 export interface IFormInput {
@@ -52,7 +53,9 @@ export const Registrations = (): ReactElement => {
           />
         </div>
         <div className={s.form__footer}>
-          <button type="submit">next steps</button>
+          <div className={s.form__button}>
+            <ButtonCard title="следующий шаг" disabled={false} type="Primary" />
+          </div>
           <div>Есть учётная запись? войти</div>
         </div>
       </form>
