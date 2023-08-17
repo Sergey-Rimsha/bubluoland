@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
 
@@ -12,8 +12,21 @@ export interface IFormInput {
 }
 
 export const Registrations = (): ReactElement => {
-  const { register, handleSubmit } = useForm<IFormInput>();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
+
+  const changeInput = (label: 'login' | 'password', value: string): void => {
+    setValue(label, value);
+  };
+
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
 
   return (
     <div className={s.form}>
@@ -23,8 +36,20 @@ export const Registrations = (): ReactElement => {
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={s.form__content}>
-          <TextField label="login" type="email" register={register} required />
-          <TextField label="login" type="password" register={register} required />
+          <TextField
+            label="login"
+            type="text"
+            changeInput={changeInput}
+            register={register}
+            required
+          />
+          <TextField
+            label="password"
+            type="password"
+            changeInput={changeInput}
+            register={register}
+            required
+          />
         </div>
         <div className={s.form__footer}>
           <button type="submit">next steps</button>
