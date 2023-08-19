@@ -43,6 +43,8 @@ export const Registrations = (): ReactElement => {
             changeInput={changeInput}
             register={register}
             required
+            title="Придумайте логин для входа"
+            description="Используйте для логина латинский алфавит и цифры"
           />
           <TextField
             label="password"
@@ -50,6 +52,8 @@ export const Registrations = (): ReactElement => {
             changeInput={changeInput}
             register={register}
             required
+            title="Пароль"
+            description="Пароль не менее 8 символов, с заглавной буквой и цифрой"
           />
         </div>
         <div className={s.form__footer}>
