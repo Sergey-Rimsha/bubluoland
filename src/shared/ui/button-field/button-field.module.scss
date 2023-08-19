@@ -1,0 +1,33 @@
+@import "shared/styles/mixins";
+@import "shared/styles/variables";
+
+.box {
+  width: 100%;
+  height: 100%;
+
+  &__button {
+    min-width: 160px;
+    min-height: 52px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(181deg, #F83600 0%, #F9D423 100%);
+    color: $color-white;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:disabled {
+      background: #EBEBEB;
+    }
+
+    &:not(:disabled):hover {
+      border: 1px solid #FF740F;
+      box-shadow: 0 2px 5px 0 rgba(54, 54, 54, 10%);
+    }
+  }
+}
