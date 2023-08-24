@@ -6,28 +6,76 @@
   height: 100%;
 
   &__button {
-    min-width: 160px;
-    min-height: 52px;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(181deg, #F83600 0%, #F9D423 100%);
-    color: $color-white;
-    font-family: Montserrat, sans-serif;
     font-size: 16px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 150%; /* 24px */
+    line-height: 150%;
     letter-spacing: 0.2px;
     text-transform: uppercase;
     cursor: pointer;
 
-    &:disabled {
-      background: #EBEBEB;
+    &_primary {
+      background: linear-gradient(181deg, #F83600 0%, #F9D423 100%);
+      color: $color-white;
+
+      &:disabled {
+        background: #EBEBEB;
+      }
+
+      &:not(:disabled):hover {
+        border: 1px solid #FF740F;
+        box-shadow: 0 2px 5px 0 rgba(54, 54, 54, 10%);
+      }
+    }
+  }
+
+  &__size {
+    min-width: 160px;
+    height: 52px;
+
+    &_lg {
+      width: 416px;
+    }
+  }
+
+  &__buttonText {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background-color: $color-white;
+    cursor: pointer;
+
+    .box__text {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      color: $color-dark;
     }
 
-    &:not(:disabled):hover {
-      border: 1px solid #FF740F;
-      box-shadow: 0 2px 5px 0 rgba(54, 54, 54, 10%);
+    .box__img {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-image: url("../../assets/icon/icon_chevron.svg");
+      margin-left: 12px;
+    }
+
+    &:hover .box__img {
+      background-image: url("../../assets/icon/icon_chevron_hover.svg");
+    }
+
+    &:target .box__img {
+      background-image: url("../../assets/icon/icon_chevron_pressed.svg");
+    }
+
+    &:target .box__text {
+      color: #F83600;
     }
   }
 }

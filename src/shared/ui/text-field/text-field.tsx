@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement, useEffect, useState } from 'react';
+import React, { ChangeEvent, ReactElement, useState } from 'react';
 
 import classNames from 'classnames';
 import { Path, UseFormRegister } from 'react-hook-form';
@@ -16,7 +16,6 @@ interface TextFieldProps {
   register: UseFormRegister<IFormInput>;
   required: boolean;
   type: InputType;
-  changeInput: (label: 'login' | 'password', value: string) => void;
   title: string;
   description: string;
 }
@@ -26,7 +25,6 @@ export const TextField = ({
   label,
   required,
   register,
-  changeInput,
   title,
   description,
 }: TextFieldProps): ReactElement => {
@@ -59,10 +57,6 @@ export const TextField = ({
       setInputType('password');
     }
   };
-
-  useEffect(() => {
-    changeInput(label, valueInput);
-  }, [changeInput, label, valueInput]);
 
   return (
     <div className={s.textField}>

@@ -40,11 +40,22 @@
   }
 
   &__button {
-    width: 416px;
-    height: 52px;
+    margin-top: 68px;
   }
 
   &__footer {
-    margin-top: 68px;
+    width: 100%;
+    display: flex;
+    margin-top: 16px;
+  }
+
+  &__decription {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: $color-grey;
+    white-space: nowrap;
+    margin-right: 16px;
   }
 }

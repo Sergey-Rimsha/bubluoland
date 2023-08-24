@@ -16,14 +16,9 @@ export const Registrations = (): ReactElement => {
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
-
-  const changeInput = (label: 'login' | 'password', value: string): void => {
-    setValue(label, value);
-  };
 
   useEffect(() => {
     console.log(errors);
@@ -40,7 +35,6 @@ export const Registrations = (): ReactElement => {
           <TextField
             label="login"
             type="text"
-            changeInput={changeInput}
             register={register}
             required
             title="Придумайте логин для входа"
@@ -49,18 +43,23 @@ export const Registrations = (): ReactElement => {
           <TextField
             label="password"
             type="password"
-            changeInput={changeInput}
             register={register}
             required
             title="Пароль"
             description="Пароль не менее 8 символов, с заглавной буквой и цифрой"
           />
         </div>
+        <div className={s.form__button}>
+          <ButtonField
+            text="следующий шаг"
+            disabled={false}
+            size="lg"
+            styleType="primary"
+          />
+        </div>
         <div className={s.form__footer}>
-          <div className={s.form__button}>
-            <ButtonField disabled={false} />
-          </div>
-          <div>Есть учётная запись? войти</div>
+          <span className={s.form__decription}>Есть учётная запись?</span>
+          <ButtonField text="войти" disabled={false} size="lg" styleType="text" />
         </div>
       </form>
     </div>
