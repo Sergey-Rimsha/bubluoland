@@ -8,7 +8,7 @@ Project stack:
 - RTK + Query     
 - TypeScript      
 - SCSS            
-- React-Router-Dom
+- Formik
 - React-hook-form 
 - ClassName       
 - БЭМ / FSD     

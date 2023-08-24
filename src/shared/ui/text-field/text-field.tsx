@@ -1,35 +1,34 @@
-import React, { ChangeEvent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, ReactElement, useEffect, useState } from 'react';
 
 import classNames from 'classnames';
-import { Path, UseFormRegister } from 'react-hook-form';
+import { FieldInputProps } from 'formik';
 
 import s from './text-field.module.scss';
 
-import { IFormInput } from 'features/auth/registration/ui/registrations';
 import eye from 'shared/assets/svg/eye.svg';
 import eyeClosed from 'shared/assets/svg/eye_closed.svg';
 
 type InputType = 'text' | 'password' | 'email';
 
-interface TextFieldProps {
-  label: Path<IFormInput>;
-  register: UseFormRegister<IFormInput>;
-  required: boolean;
+interface InputProps extends FieldInputProps<string> {
   type: InputType;
   title: string;
   description: string;
+  errorMessage?: string;
 }
 
 export const TextField = ({
   type,
-  label,
-  required,
-  register,
+  name,
   title,
   description,
-}: TextFieldProps): ReactElement => {
-  const [valueInput, setValueInput] = useState<string>('');
-  const [error] = useState<boolean>(false);
+  onChange,
+  onBlur,
+  value,
+  errorMessage,
+}: InputProps): ReactElement => {
+  const [valueInput, setValueInput] = useState<string>(value);
+  const [error, setError] = useState<boolean>(false);
   const [onFocus, setFocus] = useState<boolean>(false);
   const [inputType, setInputType] = useState<InputType>(type);
 
@@ -39,14 +38,16 @@ export const TextField = ({
     setFocus(true);
   };
 
-  const onBlurInput = (): void => {
+  const onBlurInput = (e: React.FocusEvent<any>): void => {
     if (!valueInput) {
       setFocus(false);
     }
+    onBlur(e);
   };
 
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>): void => {
     setValueInput(event.currentTarget.value);
+    onChange(event);
   };
 
   const onClickShowPass = (): void => {
@@ -58,6 +59,14 @@ export const TextField = ({
     }
   };
 
+  useEffect(() => {
+    if (errorMessage) {
+      setError(true);
+    } else {
+      setError(false);
+    }
+  }, [errorMessage]);
+
   return (
     <div className={s.textField}>
       <div className={s.textField__box}>
@@ -65,14 +74,13 @@ export const TextField = ({
           className={classNames(s.textField__label, {
             [`${s.textField__label_focus}`]: onFocus,
           })}
-          htmlFor={label}
+          htmlFor={name}
         >
           {title}
         </label>
         <input
-          id={label}
+          id={name}
           className={s.textField__input}
-          {...register(label, { required })}
           onChange={onChangeInput}
           onFocus={onFocusInput}
           onBlur={onBlurInput}
@@ -88,7 +96,7 @@ export const TextField = ({
           </button>
         )}
       </div>
-      <span className={s.textField__description}>{description}</span>
+      {!error && <span className={s.textField__description}>{description}</span>}
       {error && <span className={s.textField__error}>text field error</span>}
     </div>
   );
