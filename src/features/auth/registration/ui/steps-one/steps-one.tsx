@@ -20,12 +20,12 @@ export const StepsOne = (): ReactElement => {
     },
 
     validate: values => {
-      if (!values.login) {
-        return { login: 'required' };
+      if (!/^[a-zA-Z0-9]+$/.test(values.login)) {
+        return { login: true };
       }
 
-      if (!values.password) {
-        return { password: 'required' };
+      if (!/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/.test(values.password)) {
+        return { password: true };
       }
     },
     onSubmit: values => {
@@ -60,7 +60,7 @@ export const StepsOne = (): ReactElement => {
       <div className={s.form__button}>
         <ButtonField
           text="следующий шаг"
-          disabled={false}
+          disabled={!formik.isValid}
           size="lg"
           styleType="primary"
         />

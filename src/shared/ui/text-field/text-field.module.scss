@@ -82,9 +82,9 @@
     line-height: 16px;
     letter-spacing: 0.2px;
     color: $color-grey-a7;
-  }
 
-  &__error {
-    color: $color-error;
+    &_error {
+      color: $color-error;
+    }
   }
 }
