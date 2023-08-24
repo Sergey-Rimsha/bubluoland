@@ -4,13 +4,16 @@
 
 .form {
   &__content {
-    width: 100%;
     display: flex;
     flex-direction: column;
     margin-top: 32px;
 
     & div:last-child {
       margin-top: 36px;
+
+      @media screen and (width <= 550px) {
+        margin-top: 44px;
+      }
     }
   }
 

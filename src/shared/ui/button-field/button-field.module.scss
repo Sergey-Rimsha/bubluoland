@@ -15,6 +15,10 @@
     text-transform: uppercase;
     cursor: pointer;
 
+    @media screen and (width <= 550px) {
+      font-size: 12px;
+    }
+
     &_primary {
       background: linear-gradient(181deg, #F83600 0%, #F9D423 100%);
       color: $color-white;
@@ -36,6 +40,11 @@
 
     &_lg {
       width: 416px;
+
+      @media screen and (width <= 550px) {
+        width: 255px;
+        height: 40px;
+      }
     }
   }
 

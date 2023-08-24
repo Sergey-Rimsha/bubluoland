@@ -13,7 +13,7 @@ type InputType = 'text' | 'password' | 'email';
 interface InputProps extends FieldInputProps<string> {
   type: InputType;
   title: string;
-  description: string;
+  description?: string;
   errorMessage?: string;
 }
 

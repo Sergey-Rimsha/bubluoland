@@ -1,1 +1,0 @@
-export { Registrations } from './ui';

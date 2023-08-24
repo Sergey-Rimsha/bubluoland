@@ -2,13 +2,16 @@
 @import 'src/shared/styles/mixins';
 
 .textField {
-  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
 
+  @media screen and (width <= 550px) {
+    width: 256px;
+  }
+
   &__box {
-    width: 416px;
+    width: 100%;
     height: 56px;
     display: flex;
     position: relative;
@@ -17,6 +20,7 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     border-bottom: 1px solid $color-grey-bf;
+
 
     &_error {
       border-bottom: 1px solid $color-error;

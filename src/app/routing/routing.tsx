@@ -2,11 +2,11 @@ import { ReactElement } from 'react';
 
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { Registrations } from 'features/auth/registration';
 import { Auth } from 'pages/auth';
 import { Main } from 'pages/main';
 import { Paths } from 'shared/enum';
 import { BookInfoPage, ContractPage, MainPage, TermsPage } from 'widgets';
+import { Registrations } from 'widgets/auth/ui/registration';
 
 export const Routing = (): ReactElement => (
   <Routes>
