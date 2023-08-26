@@ -7,8 +7,8 @@ import s from './auth.module.scss';
 export const Auth = (): ReactElement => {
   return (
     <div className={s.auth}>
-      <h2 className={s.auth__title}>Cleverland</h2>
       <div className={s.auth__content}>
+        <h2 className={s.auth__title}>Cleverland</h2>
         <Outlet />
       </div>
     </div>
