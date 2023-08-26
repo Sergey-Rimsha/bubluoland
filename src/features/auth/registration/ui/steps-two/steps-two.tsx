@@ -2,35 +2,35 @@ import React, { ReactElement, useEffect } from 'react';
 
 import { useFormik } from 'formik';
 
-import s from './steps-one.module.scss';
+import s from './steps-two.module.scss';
 
 import { ButtonField } from 'shared/ui/button-field';
 import { TextField } from 'shared/ui/text-field';
 
-interface StepsOneProps {
+interface StepsTwoProps {
   setSteps: (steps: number) => void;
 }
 
-export const StepsOne = ({ setSteps }: StepsOneProps): ReactElement => {
+export const StepsTwo = ({ setSteps }: StepsTwoProps): ReactElement => {
   const formik = useFormik({
     initialValues: {
-      login: '',
-      password: '',
+      firstName: '',
+      lastName: '',
     },
 
     validate: values => {
-      if (!/^[a-zA-Z0-9]+$/.test(values.login)) {
-        return { login: true };
+      if (!values.firstName) {
+        return { firstName: 'required' };
       }
 
-      if (!/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/.test(values.password)) {
-        return { password: true };
+      if (!values.lastName) {
+        return { lastName: 'required' };
       }
     },
     onSubmit: values => {
       console.log(values);
       // eslint-disable-next-line no-magic-numbers
-      setSteps(2);
+      setSteps(3);
     },
   });
 
@@ -45,17 +45,15 @@ export const StepsOne = ({ setSteps }: StepsOneProps): ReactElement => {
       <div className={s.form__content}>
         <TextField
           type="text"
-          title="Придумайте логин для входа"
-          description="Используйте для логина латинский алфавит и цифры"
-          errorMessage={formik.errors.login}
-          {...formik.getFieldProps('login')}
+          title="Имя"
+          errorMessage={formik.errors.firstName}
+          {...formik.getFieldProps('firstName')}
         />
         <TextField
-          type="password"
+          type="text"
           title="Пароль"
-          description="Пароль не менее 8 символов, с заглавной буквой и цифрой"
-          errorMessage={formik.errors.password}
-          {...formik.getFieldProps('password')}
+          errorMessage={formik.errors.lastName}
+          {...formik.getFieldProps('lastName')}
         />
       </div>
       <div className={s.form__button}>
