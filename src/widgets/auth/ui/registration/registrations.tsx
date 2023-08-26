@@ -1,10 +1,10 @@
 import React, { ReactElement, useState } from 'react';
 
-import { StepsTwo } from '../../../../features/auth/registration/ui/steps-two';
-
 import s from './registration.module.scss';
 
 import { StepsOne } from 'features/auth/registration/ui/steps-one';
+import { StepsThree } from 'features/auth/registration/ui/steps-three';
+import { StepsTwo } from 'features/auth/registration/ui/steps-two';
 import { ButtonField } from 'shared/ui/button-field';
 
 enum StepsForm {
@@ -26,6 +26,7 @@ export const Registrations = (): ReactElement => {
       </div>
       {steps === StepsForm.one && <StepsOne setSteps={setSteps} />}
       {steps === StepsForm.two && <StepsTwo setSteps={setSteps} />}
+      {steps === StepsForm.three && <StepsThree />}
       <div className={s.form__footer}>
         <span className={s.form__decription}>Есть учётная запись?</span>
         <ButtonField text="войти" disabled={false} size="lg" styleType="text" />
