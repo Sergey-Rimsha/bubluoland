@@ -4,22 +4,27 @@ import { useFormik } from 'formik';
 
 import s from './steps-one.module.scss';
 
+import { setAuthRegistrationData } from 'entities/auth';
+import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import { ButtonField } from 'shared/ui/button-field';
 import { TextField } from 'shared/ui/text-field';
 
 interface StepsOneProps {
-  setSteps: (steps: number) => void;
+  setSteps: () => void;
 }
 
 export const StepsOne = ({ setSteps }: StepsOneProps): ReactElement => {
+  const registrationData = useAppSelector(state => state.auth.registrationData);
+  const dispatch = useAppDispatch();
+
   const formik = useFormik({
     initialValues: {
-      login: '',
+      username: '',
       password: '',
     },
 
     validate: values => {
-      if (!/^[a-zA-Z0-9]+$/.test(values.login)) {
+      if (!/^[a-zA-Z0-9]+$/.test(values.username)) {
         return { login: true };
       }
 
@@ -28,9 +33,8 @@ export const StepsOne = ({ setSteps }: StepsOneProps): ReactElement => {
       }
     },
     onSubmit: values => {
-      console.log(values);
-      // eslint-disable-next-line no-magic-numbers
-      setSteps(2);
+      dispatch(setAuthRegistrationData({ ...registrationData, ...values }));
+      setSteps();
     },
   });
 
@@ -47,8 +51,8 @@ export const StepsOne = ({ setSteps }: StepsOneProps): ReactElement => {
           type="text"
           title="Придумайте логин для входа"
           description="Используйте для логина латинский алфавит и цифры"
-          errorMessage={formik.errors.login}
-          {...formik.getFieldProps('login')}
+          errorMessage={formik.errors.username}
+          {...formik.getFieldProps('username')}
         />
         <TextField
           type="password"

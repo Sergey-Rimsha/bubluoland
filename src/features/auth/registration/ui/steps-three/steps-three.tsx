@@ -4,10 +4,15 @@ import { useFormik } from 'formik';
 
 import s from './steps-three.module.scss';
 
+import { setAuthRegistrationData } from 'entities/auth';
+import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import { ButtonField } from 'shared/ui/button-field';
 import { TextField } from 'shared/ui/text-field';
 
 export const StepsThree = (): ReactElement => {
+  const registrationData = useAppSelector(state => state.auth.registrationData);
+  const dispatch = useAppDispatch();
+
   const formik = useFormik({
     initialValues: {
       phone: '',
@@ -24,7 +29,7 @@ export const StepsThree = (): ReactElement => {
       }
     },
     onSubmit: values => {
-      console.log(values);
+      dispatch(setAuthRegistrationData({ ...registrationData, ...values }));
     },
   });
 

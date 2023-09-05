@@ -4,14 +4,18 @@ import { useFormik } from 'formik';
 
 import s from './steps-two.module.scss';
 
+import { setAuthRegistrationData } from 'entities/auth';
+import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import { ButtonField } from 'shared/ui/button-field';
 import { TextField } from 'shared/ui/text-field';
 
 interface StepsTwoProps {
-  setSteps: (steps: number) => void;
+  setSteps: () => void;
 }
 
 export const StepsTwo = ({ setSteps }: StepsTwoProps): ReactElement => {
+  const registrationData = useAppSelector(state => state.auth.registrationData);
+  const dispatch = useAppDispatch();
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -28,9 +32,8 @@ export const StepsTwo = ({ setSteps }: StepsTwoProps): ReactElement => {
       }
     },
     onSubmit: values => {
-      console.log(values);
-      // eslint-disable-next-line no-magic-numbers
-      setSteps(3);
+      dispatch(setAuthRegistrationData({ ...registrationData, ...values }));
+      setSteps();
     },
   });
 

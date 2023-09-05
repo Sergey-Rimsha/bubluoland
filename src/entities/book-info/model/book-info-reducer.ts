@@ -13,7 +13,7 @@ const initialState: BookInfoStateI = {
 };
 
 export const getBookInfoTC = createAppAsyncThunk(
-  'bookInfo',
+  'bookInfo/getBookInfo',
   async (id: string, { dispatch }) => {
     dispatch(setAppStatusLoading('loading'));
     try {

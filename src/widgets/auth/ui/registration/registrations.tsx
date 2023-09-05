@@ -18,14 +18,18 @@ enum StepsForm {
 export const Registrations = (): ReactElement => {
   const [steps, setSteps] = useState<number>(1);
 
+  const onClickNextSteps = (): void => {
+    setSteps(prevState => prevState + 1);
+  };
+
   return (
     <div className={s.form}>
       <div className={s.form__header}>
         <h3 className={s.form__title}>Регистрация</h3>
         <span className={s.form__steps}>{steps} шаг из 3</span>
       </div>
-      {steps === StepsForm.one && <StepsOne setSteps={setSteps} />}
-      {steps === StepsForm.two && <StepsTwo setSteps={setSteps} />}
+      {steps === StepsForm.one && <StepsOne setSteps={onClickNextSteps} />}
+      {steps === StepsForm.two && <StepsTwo setSteps={onClickNextSteps} />}
       {steps === StepsForm.three && <StepsThree />}
       <div className={s.form__footer}>
         <span className={s.form__decription}>Есть учётная запись?</span>
