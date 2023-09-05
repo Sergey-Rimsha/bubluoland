@@ -2,9 +2,7 @@ import React, { ReactElement, useState } from 'react';
 
 import s from './registration.module.scss';
 
-import { StepsOne } from 'features/auth/registration/ui/steps-one';
-import { StepsThree } from 'features/auth/registration/ui/steps-three';
-import { StepsTwo } from 'features/auth/registration/ui/steps-two';
+import { StepsOne, StepsThree, StepsTwo } from 'features/registration';
 import { ButtonField } from 'shared/ui/button-field';
 
 enum StepsForm {

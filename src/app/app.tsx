@@ -9,6 +9,7 @@ import { Spinner } from 'shared/ui';
 
 export const App = (): ReactElement => {
   const dispatch = useAppDispatch();
+
   const statusLoading = useAppSelector(state => state.app.statusLoading);
 
   useEffect(() => {

@@ -6,7 +6,7 @@ import { Auth } from 'pages/auth';
 import { Main } from 'pages/main';
 import { Paths } from 'shared/enum';
 import { BookInfoPage, ContractPage, MainPage, TermsPage } from 'widgets';
-import { Registrations } from 'widgets/auth/ui/registration';
+import { Login, Registrations } from 'widgets/auth';
 
 export const Routing = (): ReactElement => (
   <Routes>
@@ -18,9 +18,10 @@ export const Routing = (): ReactElement => (
       <Route path={Paths.CONTRACT} element={<ContractPage />} />
     </Route>
     <Route path={`${Paths.BOOKS}/:category/:id`} element={<BookInfoPage />} />
-    <Route path="/auth/" element={<Auth />}>
-      <Route index element={<Navigate to="registration" />} />
-      <Route path="registration" element={<Registrations />} />
+    <Route path={Paths.AUTH} element={<Auth />}>
+      <Route index element={<Navigate to={Paths.LOGIN} />} />
+      <Route path={Paths.LOGIN} element={<Login />} />
+      <Route path={Paths.REGISTRATION} element={<Registrations />} />
     </Route>
   </Routes>
 );

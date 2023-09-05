@@ -4,11 +4,13 @@ import { ErrorResponseI } from 'interface';
 import { StatusLoading } from 'types';
 
 export interface AppStateI {
+  isAuth: boolean;
   statusLoading: StatusLoading;
   error: ErrorResponseI | null;
 }
 
 const initialState: AppStateI = {
+  isAuth: false,
   statusLoading: 'idle',
   error: null,
 };
@@ -17,6 +19,9 @@ const slice = createSlice({
   name: 'app',
   initialState,
   reducers: {
+    setAppIsAuth(state, action: PayloadAction<boolean>) {
+      state.isAuth = action.payload;
+    },
     setAppStatusLoading(state, action: PayloadAction<StatusLoading>) {
       state.statusLoading = action.payload;
     },
@@ -28,4 +33,4 @@ const slice = createSlice({
 
 export const appReducer = slice.reducer;
 
-export const { setAppStatusLoading, setAppError } = slice.actions;
+export const { setAppStatusLoading, setAppError, setAppIsAuth } = slice.actions;
