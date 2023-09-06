@@ -5,12 +5,12 @@ import { useParams } from 'react-router-dom';
 
 import s from './main-page.module.scss';
 
+import { BookI } from 'entities/books';
 import {
   getBooksTC,
   setBooksSearch,
   setBooksSortRating,
-} from 'entities/books/model/books-reducer';
-import { BooksStateI, CategoriesI } from 'interface';
+} from 'entities/books/model/booksSlice';
 import iconFilter from 'shared/assets/icon/icon_filter_lg.svg';
 import iconFilterRevers from 'shared/assets/icon/icon_filter_revers.svg';
 import iconGrid from 'shared/assets/icon/icon_grid.svg';
@@ -18,12 +18,16 @@ import iconGridActive from 'shared/assets/icon/icon_grid_active.svg';
 import iconList from 'shared/assets/icon/icon_list.svg';
 import iconListActive from 'shared/assets/icon/icon_list_active.svg';
 import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
+import { CategoriesI } from 'shared/model/interface';
 import { BookCard, InputSearch } from 'shared/ui';
 
 export const MainPage = (): ReactElement => {
   const dispatch = useAppDispatch();
   const { category } = useParams();
-  const { items, sort, search } = useAppSelector<BooksStateI>(state => state.books);
+
+  const items = useAppSelector<BookI[]>(state => state.books.items);
+  const sort = useAppSelector<boolean>(state => state.books.sort);
+  const search = useAppSelector<string>(state => state.books.search);
   const categories = useAppSelector<CategoriesI[]>(state => state.categories.categories);
 
   const [viewCards, setViewCards] = useState<'GRID' | 'LIST'>('GRID');

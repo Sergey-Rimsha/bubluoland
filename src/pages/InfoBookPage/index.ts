@@ -1,0 +1,1 @@
+export { InfoBookPage } from './InfoBookPage';

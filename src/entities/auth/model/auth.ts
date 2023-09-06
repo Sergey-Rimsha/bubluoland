@@ -1,7 +1,3 @@
-export interface IAuthState {
-  userData: IUserData;
-  registrationData: IRegistrationData;
-}
 export interface IUserData {
   id: number;
   username: string;

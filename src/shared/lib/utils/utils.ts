@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-import { BookI, CategoriesI, ErrorResponseI } from 'interface';
+import { BookI } from 'entities/books';
 import star from 'shared/assets/icon/icon_star.svg';
 import starActive from 'shared/assets/icon/icon_star_active.svg';
 import { ErrorMessage } from 'shared/enum/error';
+import { CategoriesI, ErrorResponseI } from 'shared/model/interface';
 
 export const getStars = (ratingValue: number): string[] => {
   const stars = [];

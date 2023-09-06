@@ -1,1 +1,1 @@
-export { Routing } from 'app/routing/routing';
+export { router } from 'app/routing/routing';

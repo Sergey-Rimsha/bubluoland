@@ -8,7 +8,7 @@ import logoTitle from '../../shared/assets/svg/logo_title.svg';
 
 import s from './header-page.module.scss';
 
-import { Menu } from 'shared/ui';
+import { Menu } from 'widgets/menu';
 
 export const HeaderPage = (): ReactElement => (
   <header className={s.header}>

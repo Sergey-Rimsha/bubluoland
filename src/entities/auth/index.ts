@@ -1,8 +1,8 @@
 export { authApi } from './api/auth-api';
 export {
-  authReducer,
+  authSlice,
   setAuthUserData,
   setAuthRegistrationData,
   postAuthRegistrationTC,
-} from './model/auth-reducer';
-export type { IUserData, IRegistrationData, IAuthState } from './model/auth';
+} from 'entities/auth/model/authSlice';
+export type { IUserData, IRegistrationData } from './model/auth';

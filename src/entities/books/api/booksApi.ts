@@ -1,4 +1,4 @@
-import { BookI } from 'interface';
+import { BookI } from 'entities/books/model/books';
 import { instance } from 'shared';
 
 export const booksApi = {

@@ -2,7 +2,7 @@ import React, { memo, ReactElement } from 'react';
 
 import { NavLink, useParams } from 'react-router-dom';
 
-import { BookingI } from 'interface';
+import { BookingI } from 'entities/books';
 import bookDefault from 'shared/assets/jpg/book_defualt.jpg';
 import { Paths } from 'shared/enum';
 import { getBookUrl, getDateTransformCard, getStars } from 'shared/lib/utils';

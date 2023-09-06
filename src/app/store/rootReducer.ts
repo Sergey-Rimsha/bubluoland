@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
 
-import { appReducer } from 'entities/app/model/app-reducer';
-import { authReducer } from 'entities/auth';
-import { bookInfoReducer } from 'entities/book-info/model/book-info-reducer';
-import { booksReducer } from 'entities/books/model/books-reducer';
-import { categoriesReducer } from 'entities/categories/model/categories-reducer';
+import { appSlice } from 'entities/app';
+import { authSlice } from 'entities/auth';
+import { booksSlice } from 'entities/books';
+import { categoriesSlice } from 'entities/categories';
+import { infoBookSlice } from 'entities/infoBook';
 
 export const rootReducer = combineReducers({
-  auth: authReducer,
-  app: appReducer,
-  books: booksReducer,
-  bookInfo: bookInfoReducer,
-  categories: categoriesReducer,
+  auth: authSlice.reducer,
+  app: appSlice.reducer,
+  books: booksSlice.reducer,
+  bookInfo: infoBookSlice.reducer,
+  categories: categoriesSlice.reducer,
 });

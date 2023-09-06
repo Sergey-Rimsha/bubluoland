@@ -1,1 +1,1 @@
-export { Registrations } from 'widgets/auth/ui/registration/registrations';
+export { Registrations } from 'widgets/auth/ui/registration/Registrations';

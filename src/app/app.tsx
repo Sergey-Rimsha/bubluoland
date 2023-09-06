@@ -1,9 +1,11 @@
 import { ReactElement, useEffect } from 'react';
 
+import { RouterProvider } from 'react-router';
+
 import s from './app.module.scss';
 
-import { Routing } from 'app/routing';
-import { getCategoriesTC } from 'entities/categories/model/categories-reducer';
+import { router } from 'app/routing';
+import { getCategoriesTC } from 'entities/categories/model/categoriesSlice';
 import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import { Spinner } from 'shared/ui';
 
@@ -19,7 +21,7 @@ export const App = (): ReactElement => {
   return (
     <div className={s.app}>
       {statusLoading === 'loading' ? <Spinner /> : ''}
-      <Routing />
+      <RouterProvider router={router} />
     </div>
   );
 };

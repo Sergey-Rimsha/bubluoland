@@ -1,1 +1,5 @@
-export { useAppDispatch, useAppSelector } from 'shared/model/hooks/hooks';
+export {
+  useAppDispatch,
+  useAppSelector,
+  createAppAsyncThunk,
+} from 'shared/model/hooks/hooks';
