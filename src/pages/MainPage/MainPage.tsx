@@ -3,7 +3,7 @@ import { ReactElement, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useParams } from 'react-router-dom';
 
-import s from './main-page.module.scss';
+import s from './MainPage.module.scss';
 
 import { BookI } from 'entities/books';
 import {

@@ -8,8 +8,8 @@ import {
 import { AuthLayout, MainLayout } from 'app/layouts';
 import { LoginForm } from 'features/authentication/login';
 import { ContractPage, InfoBookPage, TermsPage } from 'pages';
+import { MainPage } from 'pages/MainPage';
 import { Paths } from 'shared/enum';
-import { MainPage } from 'widgets';
 import { Registrations } from 'widgets/auth';
 
 // export const Routing = (): ReactElement => (

@@ -1,0 +1,49 @@
+
+.menu {
+  border: 1px solid gray;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  padding: 5px;
+  z-index: 20000;
+
+  &__title {
+    border-bottom: 1px solid black;
+  }
+
+  &__content {
+    margin-left: 5px;
+    border-bottom: 1px solid black;
+  }
+
+  &__item {
+    display: block;
+    margin-top: 5px;
+
+    &_active {
+      color: blue;
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    margin-top: 10px;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+  }
+}
+
+.button {
+  border: none;
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}

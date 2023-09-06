@@ -1,1 +1,1 @@
-export { categoriesSlice, setCategories } from './model/categoriesSlice';
+export { categoriesSlice, setCategories, getCategoriesTC } from './model/categoriesSlice';

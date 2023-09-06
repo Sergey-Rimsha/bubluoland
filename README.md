@@ -1,16 +1,16 @@
  Bubluoland
 
-### `yarn start` Start project
-### `yarn install` Install
+### `yarn start` Project
+### `yarn install` Project
           
 Project stack: 
 - React           
-- RTK + Query     
-- TypeScript      
-- SCSS            
+- RTK
+- Axios
+- TypeScript  
 - Formik
-- React-hook-form 
 - ClassName       
+- SCSS
 - БЭМ / FSD     
 
 Project Design https://www.figma.com/file/d8LhhLjMkaTfPvAcYQULNv/Library---students-file?type=design&node-id=3601-32186&mode=design&t=JDRCMVfn5KryJcn9-0  
