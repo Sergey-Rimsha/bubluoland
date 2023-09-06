@@ -1,4 +1,4 @@
-export interface IUserData {
+export interface UserI {
   id: number;
   username: string;
   email: string;
@@ -12,11 +12,16 @@ export interface IUserData {
   phone: string;
 }
 
-export interface IRegistrationData {
+export interface RegistrationI {
   email: string;
   username: string;
   password: string;
   firstName: string;
   lastName: string;
   phone: string;
+}
+
+export interface LoginI {
+  identifier: string;
+  password: string;
 }

@@ -92,10 +92,7 @@ export const sortBooksRatingDefault = (books: BookI[]): BookI[] => {
   return [...booksRating, ...booksNotRating];
 };
 
-export const getValueCategories = (
-  books: BookI[],
-  categories: CategoriesI[],
-): CategoriesI[] => {
+export const getValueCategories = (books: BookI[], categories: CategoriesI[]): CategoriesI[] => {
   const valueCategories: { [n: string]: number } = {};
 
   categories.forEach(el => {

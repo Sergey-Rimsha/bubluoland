@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 
 import s from './steps-one.module.scss';
 
-import { setAuthRegistrationData } from 'entities/auth';
+import { setAuthRegistration } from 'entities/auth';
 import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import { ButtonField } from 'shared/ui/button-field';
 import { TextField } from 'shared/ui/text-field';
@@ -14,7 +14,7 @@ interface StepsOneProps {
 }
 
 export const StepsOne = ({ setSteps }: StepsOneProps): ReactElement => {
-  const registrationData = useAppSelector(state => state.auth.registrationData);
+  const registrationData = useAppSelector(state => state.auth.registration);
   const dispatch = useAppDispatch();
 
   const formik = useFormik({
@@ -33,7 +33,7 @@ export const StepsOne = ({ setSteps }: StepsOneProps): ReactElement => {
       }
     },
     onSubmit: values => {
-      dispatch(setAuthRegistrationData({ ...registrationData, ...values }));
+      dispatch(setAuthRegistration({ ...registrationData, ...values }));
       setSteps();
     },
   });

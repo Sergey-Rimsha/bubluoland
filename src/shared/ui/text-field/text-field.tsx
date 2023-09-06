@@ -93,11 +93,7 @@ export const TextField = React.memo(
           />
           {type === 'password' && (
             <button className={s.textField__eye} onClick={onClickShowPass} type="button">
-              {showPass ? (
-                <img src={eye} alt="eye" />
-              ) : (
-                <img src={eyeClosed} alt="eye closed" />
-              )}
+              {showPass ? <img src={eye} alt="eye" /> : <img src={eyeClosed} alt="eye closed" />}
             </button>
           )}
         </div>

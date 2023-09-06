@@ -4,11 +4,7 @@ import { setAppError, setAppStatusLoading } from 'entities/app/model/appSlice';
 import { booksApi } from 'entities/books/api/booksApi';
 import { BookI } from 'entities/books/model/books';
 import { setCategories } from 'entities/categories/model/categoriesSlice';
-import {
-  getErrorResponse,
-  getValueCategories,
-  sortBooksRatingDefault,
-} from 'shared/lib/utils';
+import { getErrorResponse, getValueCategories, sortBooksRatingDefault } from 'shared/lib/utils';
 import { createAppAsyncThunk } from 'shared/model/hooks';
 import { ErrorResponseI } from 'shared/model/interface';
 import { StatusLoading } from 'shared/model/types';

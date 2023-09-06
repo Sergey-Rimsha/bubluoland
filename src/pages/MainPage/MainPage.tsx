@@ -6,11 +6,7 @@ import { useParams } from 'react-router-dom';
 import s from './MainPage.module.scss';
 
 import { BookI } from 'entities/books';
-import {
-  getBooksTC,
-  setBooksSearch,
-  setBooksSortRating,
-} from 'entities/books/model/booksSlice';
+import { getBooksTC, setBooksSearch, setBooksSortRating } from 'entities/books/model/booksSlice';
 import iconFilter from 'shared/assets/icon/icon_filter_lg.svg';
 import iconFilterRevers from 'shared/assets/icon/icon_filter_revers.svg';
 import iconGrid from 'shared/assets/icon/icon_grid.svg';
@@ -119,9 +115,7 @@ export const MainPage = (): ReactElement => {
           </button>
         </div>
       </div>
-      <div
-        className={classNames(s.main__content, { [`${contentView}`]: books.length >= 1 })}
-      >
+      <div className={classNames(s.main__content, { [`${contentView}`]: books.length >= 1 })}>
         {books.length >= 1
           ? books.map(card => (
               <BookCard

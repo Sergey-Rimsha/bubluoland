@@ -1,15 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { authApi, IRegistrationData, IUserData } from 'entities/auth';
-import { createAppAsyncThunk } from 'shared/model/hooks/hooks';
+import { authApi, LoginI, RegistrationI, UserI } from 'entities/auth';
+import { createAppAsyncThunk } from 'shared/model/hooks';
 
-export interface IAuthState {
-  userData: IUserData;
-  registrationData: IRegistrationData;
+export interface AuthState {
+  user: UserI;
+  registration: RegistrationI;
+  login: LoginI;
 }
 
-const initialState: IAuthState = {
-  userData: {
+const initialState: AuthState = {
+  user: {
     id: 0,
     username: '',
     email: '',
@@ -22,7 +23,7 @@ const initialState: IAuthState = {
     lastName: '',
     phone: '',
   },
-  registrationData: {
+  registration: {
     email: '',
     username: '',
     password: '',
@@ -30,35 +31,56 @@ const initialState: IAuthState = {
     lastName: '',
     phone: '',
   },
+  login: {
+    identifier: '',
+    password: '',
+  },
 };
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setAuthUserData(state, action: PayloadAction<IUserData>) {
-      state.userData = action.payload;
+    setAuthUser(state, action: PayloadAction<UserI>) {
+      state.user = action.payload;
     },
-    setAuthRegistrationData(state, action: PayloadAction<IRegistrationData>) {
-      state.registrationData = action.payload;
+    setAuthRegistration(state, action: PayloadAction<RegistrationI>) {
+      state.registration = action.payload;
+    },
+    setAuthLogin(state, action: PayloadAction<LoginI>) {
+      state.login = action.payload;
     },
   },
 });
 
 // TODO: remove to features(model) layer
-export const postAuthRegistrationTC = createAppAsyncThunk(
-  'auth/postAuthRegistration',
+export const authRegistrationTC = createAppAsyncThunk(
+  'auth/authRegistrationTC',
   async (arg, { dispatch, getState }) => {
     try {
-      const data = getState().auth.registrationData;
+      const data = getState().auth.registration;
       const response = await authApi.registration(data);
 
       console.log(response);
 
-      dispatch(setAuthUserData(response.data.user));
+      dispatch(setAuthUser(response.data.user));
     } catch (e) {
       console.log(e);
     }
   },
 );
-export const { setAuthUserData, setAuthRegistrationData } = authSlice.actions;
+
+export const authLoginTC = createAppAsyncThunk(
+  'auth/authLoginTC',
+  async (arg, { dispatch, getState }) => {
+    try {
+      const data = getState().auth.login;
+      const response = await authApi.login(data);
+
+      dispatch(setAuthUser(response.data.user));
+    } catch (e) {
+      console.log(e);
+    }
+  },
+);
+export const { setAuthUser, setAuthRegistration, setAuthLogin } = authSlice.actions;

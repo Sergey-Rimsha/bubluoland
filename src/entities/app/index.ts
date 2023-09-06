@@ -1,6 +1,1 @@
-export {
-  appSlice,
-  setAppError,
-  setAppIsAuth,
-  setAppStatusLoading,
-} from './model/appSlice';
+export { appSlice, setAppError, setAppIsAuth, setAppStatusLoading } from './model/appSlice';

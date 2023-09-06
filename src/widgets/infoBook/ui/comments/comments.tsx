@@ -48,9 +48,7 @@ export const Comments = ({ comments = [] }: CommentsI): ReactElement => {
               alt="avatar"
             />
             <div className={s.comment__block}>
-              <div
-                className={s.comment__name}
-              >{`${el.user.firstName} ${el.user.lastName}`}</div>
+              <div className={s.comment__name}>{`${el.user.firstName} ${el.user.lastName}`}</div>
               <div className={s.comment__date}>{getDataTransform(el.createdAt)}</div>
             </div>
           </div>

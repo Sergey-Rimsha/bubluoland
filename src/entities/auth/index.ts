@@ -1,8 +1,10 @@
-export { authApi } from './api/auth-api';
+export { authApi } from 'entities/auth/api/authApi';
 export {
   authSlice,
-  setAuthUserData,
-  setAuthRegistrationData,
-  postAuthRegistrationTC,
+  setAuthLogin,
+  setAuthRegistration,
+  setAuthUser,
+  authRegistrationTC,
+  authLoginTC,
 } from 'entities/auth/model/authSlice';
-export type { IUserData, IRegistrationData } from './model/auth';
+export type { LoginI, UserI, RegistrationI } from './model/auth';

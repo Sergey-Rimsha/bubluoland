@@ -1,9 +1,4 @@
-import {
-  createHashRouter,
-  createRoutesFromElements,
-  Navigate,
-  Route,
-} from 'react-router-dom';
+import { createHashRouter, createRoutesFromElements, Navigate, Route } from 'react-router-dom';
 
 import { AuthLayout, MainLayout } from 'app/layouts';
 import { LoginForm } from 'features/authentication/login';

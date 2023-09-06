@@ -62,9 +62,7 @@ export const Menu = memo((props: MenuI): ReactElement => {
     );
 
   const sidebarMenu = (): ReactElement => (
-    <nav
-      className={classNames(`${s.nav}`, { [`${s.sidebar}`]: menuId === 'navigation' })}
-    >
+    <nav className={classNames(`${s.nav}`, { [`${s.sidebar}`]: menuId === 'navigation' })}>
       <button
         className={s.nav__button}
         data-test-id={`${menuId}-showcase`}

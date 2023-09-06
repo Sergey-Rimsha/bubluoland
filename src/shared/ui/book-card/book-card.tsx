@@ -23,16 +23,7 @@ interface BookCardI {
 }
 
 export const BookCard = memo(
-  ({
-    id,
-    title,
-    authors,
-    rating,
-    image,
-    booking,
-    view,
-    search,
-  }: BookCardI): ReactElement => {
+  ({ id, title, authors, rating, image, booking, view, search }: BookCardI): ReactElement => {
     const { category } = useParams();
 
     const showRating = (rate: number | null): ReactElement => (
