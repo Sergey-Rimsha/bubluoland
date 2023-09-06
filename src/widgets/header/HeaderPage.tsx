@@ -6,7 +6,7 @@ import avatar from '../../shared/assets/png/avatar.png';
 import logo from '../../shared/assets/svg/logo.svg';
 import logoTitle from '../../shared/assets/svg/logo_title.svg';
 
-import s from './header-page.module.scss';
+import s from './HeaderPage.module.scss';
 
 import { Menu } from 'widgets/menu';
 
@@ -27,7 +27,6 @@ export const HeaderPage = (): ReactElement => (
         <Menu menuId="burger" />
         <div className={s.header__title}>Библиотека</div>
         <div className={`${s.header__login} ${s.login}`}>
-          <NavLink to="/auth">auth</NavLink>
           <div className={s.login__title}>Привет, Иван!</div>
           <div className={s.login__avatar}>
             <img src={avatar} alt="avatar" />

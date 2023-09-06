@@ -1,1 +1,1 @@
-export { HeaderPage } from './header-page';
+export { HeaderPage } from './HeaderPage';
