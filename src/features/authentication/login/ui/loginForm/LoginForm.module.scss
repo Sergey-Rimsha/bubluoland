@@ -4,6 +4,10 @@
 .loginForm {
   padding: 48px 56px;
 
+  @media screen and (width <= 550px) {
+    padding: 24px 16px;
+  }
+
   &__title {
     font-size: 24px;
     font-weight: 700;
@@ -45,6 +49,32 @@
 
 .form {
   @include form-content;
+
+  &__decription {
+    margin-top: 20px;
+    margin-left: 12px;
+  }
+
+  &__error {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: $color-error;
+  }
+
+  &__link {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: $color-grey-a7;
+
+    &_active {
+      color: $color-dark;
+    }
+  }
+
 
   &__button {
     margin-top: 32px;

@@ -13,8 +13,8 @@ type InputType = 'text' | 'password' | 'email';
 interface InputProps extends FieldInputProps<string> {
   type: InputType;
   title: string;
-  description?: string;
-  errorMessage?: string;
+  description?: string | null;
+  errorMessage?: string | null;
 }
 
 export const TextField = React.memo(

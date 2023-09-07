@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 
 import s from './steps-one.module.scss';
 
-import { setAuthRegistration } from 'entities/auth';
+import { authActions } from 'entities/auth';
 import { useAppDispatch, useAppSelector } from 'shared/model/hooks';
 import { ButtonField } from 'shared/ui/button-field';
 import { TextField } from 'shared/ui/text-field';
@@ -33,7 +33,7 @@ export const StepsOne = ({ setSteps }: StepsOneProps): ReactElement => {
       }
     },
     onSubmit: values => {
-      dispatch(setAuthRegistration({ ...registrationData, ...values }));
+      dispatch(authActions.setRegistration({ ...registrationData, ...values }));
       setSteps();
     },
   });

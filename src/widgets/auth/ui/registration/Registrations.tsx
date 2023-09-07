@@ -1,6 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 
 import { StepsOne, StepsThree, StepsTwo } from 'features/authentication/registration';
+import { Paths } from 'shared/enum';
 import { ButtonField } from 'shared/ui/button-field';
 import s from 'widgets/auth/ui/registration/Registration.module.scss';
 
@@ -30,7 +31,7 @@ export const Registrations = (): ReactElement => {
       {steps === StepsForm.three && <StepsThree />}
       <div className={s.form__footer}>
         <span className={s.form__decription}>Есть учётная запись?</span>
-        <ButtonField text="войти" disabled={false} size="lg" styleType="text" />
+        <ButtonField text="войти" disabled={false} size="lg" styleType="text" link={Paths.AUTH} />
       </div>
     </div>
   );

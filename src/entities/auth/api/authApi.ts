@@ -8,18 +8,6 @@ interface AuthResponseI {
   user: UserI;
 }
 
-export interface ErrorResponse {
-  data?: any;
-  error: AuthResponseError;
-}
-
-export interface AuthResponseError {
-  status: string;
-  name: string;
-  message: string;
-  details: {};
-}
-
 // TODO: Rename Interface IRegistrationResponse
 export const authApi = {
   registration(data: RegistrationI) {

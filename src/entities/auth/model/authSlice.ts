@@ -3,10 +3,16 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { authApi, LoginI, RegistrationI, UserI } from 'entities/auth';
 import { createAppAsyncThunk } from 'shared/model/hooks';
 
+interface AuthError {
+  status: number;
+  message?: string;
+}
+
 export interface AuthState {
   user: UserI;
   registration: RegistrationI;
   login: LoginI;
+  errors: AuthError;
 }
 
 const initialState: AuthState = {
@@ -35,20 +41,27 @@ const initialState: AuthState = {
     identifier: '',
     password: '',
   },
+  errors: {
+    status: 0,
+    message: '',
+  },
 };
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setAuthUser(state, action: PayloadAction<UserI>) {
+    setUser(state, action: PayloadAction<UserI>) {
       state.user = action.payload;
     },
-    setAuthRegistration(state, action: PayloadAction<RegistrationI>) {
+    setRegistration(state, action: PayloadAction<RegistrationI>) {
       state.registration = action.payload;
     },
-    setAuthLogin(state, action: PayloadAction<LoginI>) {
+    setLogin(state, action: PayloadAction<LoginI>) {
       state.login = action.payload;
+    },
+    setErrors(state, action: PayloadAction<AuthError>) {
+      state.errors = action.payload;
     },
   },
 });
@@ -63,24 +76,11 @@ export const authRegistrationTC = createAppAsyncThunk(
 
       console.log(response);
 
-      dispatch(setAuthUser(response.data.user));
+      dispatch(authActions.setUser(response.data.user));
     } catch (e) {
       console.log(e);
     }
   },
 );
 
-export const authLoginTC = createAppAsyncThunk(
-  'auth/authLoginTC',
-  async (arg, { dispatch, getState }) => {
-    try {
-      const data = getState().auth.login;
-      const response = await authApi.login(data);
-
-      dispatch(setAuthUser(response.data.user));
-    } catch (e) {
-      console.log(e);
-    }
-  },
-);
-export const { setAuthUser, setAuthRegistration, setAuthLogin } = authSlice.actions;
+export const authActions = authSlice.actions;
