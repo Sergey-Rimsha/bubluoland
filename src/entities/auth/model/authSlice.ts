@@ -74,7 +74,7 @@ export const authRegistrationTC = createAppAsyncThunk(
       const data = getState().auth.registration;
       const response = await authApi.registration(data);
 
-      console.log(response);
+      localStorage.setItem('accessToken', response.data.jwt);
 
       dispatch(authActions.setUser(response.data.user));
     } catch (e) {

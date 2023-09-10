@@ -54,7 +54,7 @@ export const StepsTwo = ({ setSteps }: StepsTwoProps): ReactElement => {
         />
         <TextField
           type="text"
-          title="Пароль"
+          title="Фамилия"
           errorMessage={formik.errors.lastName}
           {...formik.getFieldProps('lastName')}
         />

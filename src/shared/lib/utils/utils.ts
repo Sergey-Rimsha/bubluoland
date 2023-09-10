@@ -48,11 +48,13 @@ export const getDataTransform = (data: string): string => {
   return dataNew.toLocaleString('ru', options);
 };
 
+// TODO: delete getBookUrl
+
 export const getBookUrl = (img: { url: string } | null): string => {
-  const BaseUrl = 'https://strapi.cleverland.by';
+  // const BaseUrl = 'https://strapi.cleverland.by';
 
   if (img) {
-    return `${BaseUrl}${img.url}`;
+    return `${img.url}`;
   }
 
   return '';

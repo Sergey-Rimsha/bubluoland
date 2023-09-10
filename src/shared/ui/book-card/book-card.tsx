@@ -2,11 +2,12 @@ import React, { memo, ReactElement } from 'react';
 
 import { NavLink, useParams } from 'react-router-dom';
 
+import s from './book-card.module.scss';
+
 import { BookingI } from 'entities/books';
 import bookDefault from 'shared/assets/jpg/book_defualt.jpg';
 import { Paths } from 'shared/enum';
 import { getBookUrl, getDateTransformCard, getStars } from 'shared/lib/utils';
-import s from 'shared/ui/book-card/book-card.module.scss';
 import { ButtonCard } from 'shared/ui/button-card';
 
 interface BookCardI {
