@@ -1,16 +1,30 @@
-  name: test
-  on: push
-  jobs:
-    lint:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-        - name: Install
-          uses: borales/actions-yarn@v4
-          with:
-            cmd: install
-        - name: Lint
-          uses: borales/actions-yarn@v4
-          with:
-            cmd: eslint
+name: test
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: yarn install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+      - name: run eslint
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: eslint
+  bild:
+    runs-on: ubuntu-latest
+    needs: [lint]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: yarn install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
