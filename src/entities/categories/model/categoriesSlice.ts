@@ -27,19 +27,16 @@ export const categoriesSlice = createSlice({
 });
 
 // TODO: remove to features(model) layer
-export const getCategoriesTC = createAppAsyncThunk(
-  'categories/getCategories',
-  async (arg, { dispatch }) => {
-    dispatch(setAppStatusLoading('loading'));
-    try {
-      const response = await categoriesApi.getCategories();
+export const getCategoriesTC = createAppAsyncThunk('categories/getCategories', async (arg, { dispatch }) => {
+  dispatch(setAppStatusLoading('loading'));
+  try {
+    const response = await categoriesApi.getCategories();
 
-      dispatch(setCategories(response.data));
-      dispatch(setAppStatusLoading('succeeded'));
-    } catch (error: unknown) {
-      dispatch(setAppError(getErrorResponse(error)));
-      dispatch(setAppStatusLoading('failed'));
-    }
-  },
-);
+    dispatch(setCategories(response.data));
+    dispatch(setAppStatusLoading('succeeded'));
+  } catch (error: unknown) {
+    dispatch(setAppError(getErrorResponse(error)));
+    dispatch(setAppStatusLoading('failed'));
+  }
+});
 export const { setCategories } = categoriesSlice.actions;

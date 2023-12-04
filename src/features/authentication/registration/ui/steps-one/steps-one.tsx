@@ -63,12 +63,7 @@ export const StepsOne = ({ setSteps }: StepsOneProps): ReactElement => {
         />
       </div>
       <div className={s.form__button}>
-        <ButtonField
-          text="следующий шаг"
-          disabled={!formik.isValid}
-          size="lg"
-          styleType="primary"
-        />
+        <ButtonField text="следующий шаг" disabled={!formik.isValid} size="lg" styleType="primary" />
       </div>
     </form>
   );

@@ -15,22 +15,19 @@ export interface AuthResponseError {
   details: {};
 }
 
-export const authLoginTC = createAppAsyncThunk(
-  'auth/authLoginTC',
-  async (arg, { dispatch, getState }) => {
-    try {
-      const data = getState().auth.login;
-      const response = await authApi.login(data);
+export const authLoginTC = createAppAsyncThunk('auth/authLoginTC', async (arg, { dispatch, getState }) => {
+  try {
+    const data = getState().auth.login;
+    const response = await authApi.login(data);
 
-      dispatch(authActions.setUser(response.data.user));
-    } catch (error) {
-      const apiError: AxiosError<ErrorResponse> = error as AxiosError<ErrorResponse>;
+    dispatch(authActions.setUser(response.data.user));
+  } catch (error) {
+    const apiError: AxiosError<ErrorResponse> = error as AxiosError<ErrorResponse>;
 
-      const status = apiError.response?.status;
+    const status = apiError.response?.status;
 
-      if (status) {
-        dispatch(authActions.setErrors({ status }));
-      }
+    if (status) {
+      dispatch(authActions.setErrors({ status }));
     }
-  },
-);
+  }
+});

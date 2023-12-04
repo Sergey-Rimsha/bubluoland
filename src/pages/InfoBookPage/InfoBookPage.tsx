@@ -44,9 +44,7 @@ export const InfoBookPage = (): ReactElement => {
             <div data-test-id="book-title" className={s.bookInfo__title}>
               {book.title}
             </div>
-            <div className={s.bookInfo__author}>{`${book?.authors?.join(',')}, ${
-              book.issueYear
-            }`}</div>
+            <div className={s.bookInfo__author}>{`${book?.authors?.join(',')}, ${book.issueYear}`}</div>
             <div className={s.bookInfo__button}>
               <button disabled={disabled} type="button">
                 {titleBtn}

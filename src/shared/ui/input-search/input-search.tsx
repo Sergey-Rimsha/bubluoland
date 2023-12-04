@@ -41,12 +41,7 @@ export const InputSearch = React.memo(({ search, onChangeSearchInput }: InputSea
 
   return (
     <div className={s.input}>
-      <button
-        data-test-id="button-search-open"
-        className={s.input__img}
-        onClick={onHandlerClickInput}
-        type="button"
-      >
+      <button data-test-id="button-search-open" className={s.input__img} onClick={onHandlerClickInput} type="button">
         <img src={searchImg} alt="search" />
       </button>
       <div className={classNames(s.input__box, { [`${s.input__box_show}`]: focusInput })}>

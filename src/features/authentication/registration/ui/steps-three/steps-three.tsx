@@ -49,20 +49,10 @@ export const StepsThree = (): ReactElement => {
           errorMessage={formik.errors.phone}
           {...formik.getFieldProps('phone')}
         />
-        <TextField
-          type="email"
-          title="E-mail"
-          errorMessage={formik.errors.email}
-          {...formik.getFieldProps('email')}
-        />
+        <TextField type="email" title="E-mail" errorMessage={formik.errors.email} {...formik.getFieldProps('email')} />
       </div>
       <div className={s.form__button}>
-        <ButtonField
-          text="зарегистрироваться"
-          disabled={!formik.isValid}
-          size="lg"
-          styleType="primary"
-        />
+        <ButtonField text="зарегистрироваться" disabled={!formik.isValid} size="lg" styleType="primary" />
       </div>
     </form>
   );

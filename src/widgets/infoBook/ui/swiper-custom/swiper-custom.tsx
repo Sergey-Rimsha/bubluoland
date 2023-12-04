@@ -51,11 +51,7 @@ export const SwiperCustom = ({ images }: SwiperCustomI): ReactElement => {
         {images?.map((img, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <SwiperSlide key={index}>
-            <img
-              className="swiperCustom__imgLg"
-              src={getBookUrl(img) || bookDefaultLg}
-              alt="img_book"
-            />
+            <img className="swiperCustom__imgLg" src={getBookUrl(img) || bookDefaultLg} alt="img_book" />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -76,11 +72,7 @@ export const SwiperCustom = ({ images }: SwiperCustomI): ReactElement => {
             {images?.map((img, index) => (
               // eslint-disable-next-line react/no-array-index-key
               <SwiperSlide key={index}>
-                <img
-                  className="swiperCustom__img"
-                  src={getBookUrl(img) || bookDefaultLg}
-                  alt="img_book"
-                />
+                <img className="swiperCustom__img" src={getBookUrl(img) || bookDefaultLg} alt="img_book" />
               </SwiperSlide>
             ))}
           </Swiper>

@@ -13,13 +13,7 @@ interface ButtonFieldProps {
   link?: string;
 }
 
-export const ButtonField = ({
-  disabled,
-  size,
-  styleType,
-  text,
-  link,
-}: ButtonFieldProps): ReactElement => {
+export const ButtonField = ({ disabled, size, styleType, text, link }: ButtonFieldProps): ReactElement => {
   const navigate = useNavigate();
   const buttonStyleType = classNames(s.box__button, {
     [`${s.box__button_primary}`]: styleType === 'primary',
@@ -45,11 +39,7 @@ export const ButtonField = ({
           <span className={s.box__img} />
         </button>
       ) : (
-        <button
-          className={classNames(buttonStyleType, buttonStyleSize)}
-          type="submit"
-          disabled={disabled}
-        >
+        <button className={classNames(buttonStyleType, buttonStyleSize)} type="submit" disabled={disabled}>
           {text}
         </button>
       )}

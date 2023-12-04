@@ -30,21 +30,18 @@ export const infoBookSlice = createSlice({
 });
 
 // TODO: remove to features(model) layer
-export const getBookInfoTC = createAppAsyncThunk(
-  'bookInfo/getBookInfo',
-  async (id: string, { dispatch }) => {
-    dispatch(setAppStatusLoading('loading'));
-    try {
-      const response = await infoBookApi.getBookInfo(id);
+export const getBookInfoTC = createAppAsyncThunk('bookInfo/getBookInfo', async (id: string, { dispatch }) => {
+  dispatch(setAppStatusLoading('loading'));
+  try {
+    const response = await infoBookApi.getBookInfo(id);
 
-      dispatch(setBookInfo(response.data));
-      dispatch(setAppStatusLoading('succeeded'));
-    } catch (error: unknown) {
-      dispatch(setAppError(getErrorResponse(error)));
-      dispatch(setAppStatusLoading('failed'));
-      dispatch(setBookInfoError(getErrorResponse(error)));
-    }
-  },
-);
+    dispatch(setBookInfo(response.data));
+    dispatch(setAppStatusLoading('succeeded'));
+  } catch (error: unknown) {
+    dispatch(setAppError(getErrorResponse(error)));
+    dispatch(setAppStatusLoading('failed'));
+    dispatch(setBookInfoError(getErrorResponse(error)));
+  }
+});
 
 export const { setBookInfoError, setBookInfo } = infoBookSlice.actions;

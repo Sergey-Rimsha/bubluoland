@@ -18,16 +18,7 @@ interface InputProps extends FieldInputProps<string> {
 }
 
 export const TextField = React.memo(
-  ({
-    type,
-    name,
-    title,
-    description,
-    onChange,
-    onBlur,
-    value,
-    errorMessage,
-  }: InputProps): ReactElement => {
+  ({ type, name, title, description, onChange, onBlur, value, errorMessage }: InputProps): ReactElement => {
     const [valueInput, setValueInput] = useState<string>(value);
     const [error, setError] = useState<boolean>(false);
     const [onFocus, setFocus] = useState<boolean>(false);

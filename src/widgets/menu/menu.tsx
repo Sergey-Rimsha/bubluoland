@@ -98,22 +98,14 @@ export const Menu = memo((props: MenuI): ReactElement => {
               <span data-test-id={`${menuId}-${item.path}`} className={s.link__title}>
                 {item.name}
               </span>
-              <span
-                data-test-id={`${menuId}-book-count-for-${item.path}`}
-                className={s.link__value}
-              >
+              <span data-test-id={`${menuId}-book-count-for-${item.path}`} className={s.link__value}>
                 {item.value}
               </span>
             </NavLink>
           ))}
         </div>
       </div>
-      <NavLink
-        data-test-id={`${menuId}-terms`}
-        onClick={onClickSubTitle}
-        className={styleSubLink}
-        to={Paths.TERMS}
-      >
+      <NavLink data-test-id={`${menuId}-terms`} onClick={onClickSubTitle} className={styleSubLink} to={Paths.TERMS}>
         Правила пользования
       </NavLink>
       <NavLink

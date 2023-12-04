@@ -48,28 +48,20 @@ export const booksSlice = createSlice({
 });
 
 // TODO: remove thunk to features(model) layer
-export const getBooksTC = createAppAsyncThunk(
-  'books/getBooks',
-  async (arg, { dispatch, getState }) => {
-    dispatch(setAppStatusLoading('loading'));
-    try {
-      const response = await booksApi.getBooks();
-      const payload = getValueCategories(response.data, getState().categories.categories);
+export const getBooksTC = createAppAsyncThunk('books/getBooks', async (arg, { dispatch, getState }) => {
+  dispatch(setAppStatusLoading('loading'));
+  try {
+    const response = await booksApi.getBooks();
+    const payload = getValueCategories(response.data, getState().categories.categories);
 
-      dispatch(setBooks(sortBooksRatingDefault(response.data)));
-      dispatch(setCategories(payload));
-      dispatch(setAppStatusLoading('succeeded'));
-    } catch (error: unknown) {
-      dispatch(setAppError(getErrorResponse(error)));
-      dispatch(setBooksError(getErrorResponse(error)));
-      dispatch(setAppStatusLoading('failed'));
-    }
-  },
-);
-export const {
-  setBooksStatusLoading,
-  setBooks,
-  setBooksError,
-  setBooksSearch,
-  setBooksSortRating,
-} = booksSlice.actions;
+    dispatch(setBooks(sortBooksRatingDefault(response.data)));
+    dispatch(setCategories(payload));
+    dispatch(setAppStatusLoading('succeeded'));
+  } catch (error: unknown) {
+    dispatch(setAppError(getErrorResponse(error)));
+    dispatch(setBooksError(getErrorResponse(error)));
+    dispatch(setAppStatusLoading('failed'));
+  }
+});
+export const { setBooksStatusLoading, setBooks, setBooksError, setBooksSearch, setBooksSortRating } =
+  booksSlice.actions;

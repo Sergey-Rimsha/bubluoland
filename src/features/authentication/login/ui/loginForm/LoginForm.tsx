@@ -28,11 +28,9 @@ export const LoginForm = (): ReactElement => {
     },
   });
 
-  const errorLogin =
-    formik.errors.identifier && formik.touched.identifier ? formik.errors.identifier : null;
+  const errorLogin = formik.errors.identifier && formik.touched.identifier ? formik.errors.identifier : null;
 
-  const errorPassword =
-    formik.errors.password && formik.touched.password ? formik.errors.password : null;
+  const errorPassword = formik.errors.password && formik.touched.password ? formik.errors.password : null;
 
   useEffect(() => {
     // eslint-disable-next-line no-magic-numbers

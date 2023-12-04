@@ -11,10 +11,7 @@ interface AuthResponseI {
 // TODO: Rename Interface IRegistrationResponse
 export const authApi = {
   registration(data: RegistrationI) {
-    return instance.post<AuthResponseI, AxiosResponse<AuthResponseI>>(
-      '/api/auth/local/register',
-      data,
-    );
+    return instance.post<AuthResponseI, AxiosResponse<AuthResponseI>>('/api/auth/local/register', data);
   },
   login(data: LoginI) {
     return instance.post<AuthResponseI, AxiosResponse<AuthResponseI>>('/api/auth/local', data);

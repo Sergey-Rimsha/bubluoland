@@ -32,10 +32,7 @@ export const ModalError = (): ReactElement => {
   return (
     <div className={s.modal}>
       <div className={s.container}>
-        <div
-          data-test-id="error"
-          className={classNames(s.modal__box, { [`${s.modal__box_show}`]: showModal })}
-        >
+        <div data-test-id="error" className={classNames(s.modal__box, { [`${s.modal__box_show}`]: showModal })}>
           <div className={s.modal__wrap}>
             <img className={s.modal__image} src={errorIcon} alt="error" />
             <div className={s.modal__message}>{ErrorMessage.MESSAGE}</div>

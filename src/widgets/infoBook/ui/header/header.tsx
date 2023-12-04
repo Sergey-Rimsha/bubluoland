@@ -21,11 +21,7 @@ export const Header = memo(({ bookName, category }: HeaderI) => {
     <div className={s.header}>
       <div className={s.container}>
         <div className={s.header__box}>
-          <NavLink
-            data-test-id="breadcrumbs-link"
-            className={s.header__item}
-            to={`${Paths.BOOKS}/${category}`}
-          >
+          <NavLink data-test-id="breadcrumbs-link" className={s.header__item} to={`${Paths.BOOKS}/${category}`}>
             <span>{pathName?.name || 'Все книги'}</span>
           </NavLink>
           <span className={s.header__item}>/</span>
