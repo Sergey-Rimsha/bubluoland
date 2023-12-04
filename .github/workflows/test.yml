@@ -14,7 +14,7 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: eslint
-  bild:
+  build:
     runs-on: ubuntu-latest
     needs: [lint]
     steps:
@@ -27,4 +27,4 @@ jobs:
       - name: Build production bundle
         uses: borales/actions-yarn@v4
         with:
-          cmd: build
+          cmd: build:prod
