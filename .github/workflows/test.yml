@@ -1,0 +1,16 @@
+  name: test
+  on: push
+  jobs:
+    lint:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Install
+          uses: borales/actions-yarn@v4
+          with:
+            cmd: install
+        - name: Lint
+          uses: borales/actions-yarn@v4
+          with:
+            cmd: lint
