@@ -1,7 +1,4 @@
- Bubluoland
-
-### `yarn start` Project
-### `yarn install` Project
+Bubluoland
           
 Project stack: 
 - React           

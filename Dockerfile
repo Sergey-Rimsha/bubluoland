@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json . /
 
 # Установить зависимости
-RUN npm install
+RUN npm ci
 
 # Скопировать весь код приложения в контейнер
 COPY . .
