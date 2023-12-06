@@ -35,6 +35,7 @@
     "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "lint-style-fix": "npx stylelint \"**/*.scss\" --fix",
     "prepare": "husky install"

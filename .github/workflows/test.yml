@@ -15,7 +15,7 @@ jobs:
           path: prime-numbers
           key: ${{ runner.os }}-primes
       - name: run eslint
-        run: npm run eslint
+        run: npm run lint
   build:
     runs-on: ubuntu-latest
     needs: [lint]
