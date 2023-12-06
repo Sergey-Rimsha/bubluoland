@@ -25,4 +25,4 @@ jobs:
       - name: npm install
         run: npm ci
       - name: Build production bundle
-        run: npm build
+        run: npm run build
